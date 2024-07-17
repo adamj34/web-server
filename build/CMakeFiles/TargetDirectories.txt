@@ -1,4 +1,5 @@
 /home/addar/web-server/build/CMakeFiles/web-server.dir
+/home/addar/web-server/build/CMakeFiles/tests.dir
 /home/addar/web-server/build/CMakeFiles/Experimental.dir
 /home/addar/web-server/build/CMakeFiles/Nightly.dir
 /home/addar/web-server/build/CMakeFiles/Continuous.dir
@@ -30,3 +31,11 @@
 /home/addar/web-server/build/CMakeFiles/test.dir
 /home/addar/web-server/build/CMakeFiles/edit_cache.dir
 /home/addar/web-server/build/CMakeFiles/rebuild_cache.dir
+/home/addar/web-server/build/_deps/catch2-build/CMakeFiles/test.dir
+/home/addar/web-server/build/_deps/catch2-build/CMakeFiles/edit_cache.dir
+/home/addar/web-server/build/_deps/catch2-build/CMakeFiles/rebuild_cache.dir
+/home/addar/web-server/build/_deps/catch2-build/src/CMakeFiles/Catch2.dir
+/home/addar/web-server/build/_deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
+/home/addar/web-server/build/_deps/catch2-build/src/CMakeFiles/test.dir
+/home/addar/web-server/build/_deps/catch2-build/src/CMakeFiles/edit_cache.dir
+/home/addar/web-server/build/_deps/catch2-build/src/CMakeFiles/rebuild_cache.dir
