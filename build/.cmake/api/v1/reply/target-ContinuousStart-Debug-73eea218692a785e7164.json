@@ -21,7 +21,7 @@
 			{
 				"command" : 1,
 				"file" : 2,
-				"line" : 6,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
@@ -50,8 +50,8 @@
 	{
 		"name" : "CTestDashboardTargets"
 	},
-	"id" : "ContinuousBuild::@6890427a1f51a3e7e1df",
-	"name" : "ContinuousBuild",
+	"id" : "ContinuousStart::@6890427a1f51a3e7e1df",
+	"name" : "ContinuousStart",
 	"paths" : 
 	{
 		"build" : ".",
@@ -79,13 +79,13 @@
 		{
 			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/ContinuousBuild",
+			"path" : "build/CMakeFiles/ContinuousStart",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/ContinuousBuild.rule",
+			"path" : "build/CMakeFiles/ContinuousStart.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

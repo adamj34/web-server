@@ -1,8 +1,26 @@
 [
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -g -o CMakeFiles/web-server.dir/main.cpp.o -c /home/addar/web-server/main.cpp",
+  "command": "/usr/bin/c++ -I/home/addar/web-server/include -g -std=gnu++20 -o CMakeFiles/web-server.dir/main.cpp.o -c /home/addar/web-server/main.cpp",
   "file": "/home/addar/web-server/main.cpp",
   "output": "CMakeFiles/web-server.dir/main.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/c++ -I/home/addar/web-server/include -g -std=gnu++20 -o CMakeFiles/web-server.dir/src/http_server.cpp.o -c /home/addar/web-server/src/http_server.cpp",
+  "file": "/home/addar/web-server/src/http_server.cpp",
+  "output": "CMakeFiles/web-server.dir/src/http_server.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/c++ -I/home/addar/web-server/include -g -std=gnu++20 -o CMakeFiles/web-server.dir/src/http_request.cpp.o -c /home/addar/web-server/src/http_request.cpp",
+  "file": "/home/addar/web-server/src/http_request.cpp",
+  "output": "CMakeFiles/web-server.dir/src/http_request.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/c++ -I/home/addar/web-server/include -g -std=gnu++20 -o CMakeFiles/web-server.dir/src/http_response.cpp.o -c /home/addar/web-server/src/http_response.cpp",
+  "file": "/home/addar/web-server/src/http_response.cpp",
+  "output": "CMakeFiles/web-server.dir/src/http_response.cpp.o"
 }
 ]
