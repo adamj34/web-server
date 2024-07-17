@@ -1,4 +1,3 @@
 # ninja log v5
-0	520	1715194841794199703	CMakeFiles/server.dir/main.cpp.o	6be252f1d69d97e5
 1407	1554	1715194842824199681	server	c5b18fa1047830fd
-0	1406	1715194842674199684	CMakeFiles/server.dir/src/http_server.cpp.o	4057e44905b903fd
+0	1124	1721225904480775971	CMakeFiles/web-server.dir/main.cpp.o	7ec8ad90b36a4937

@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: web_server
+# Project: web-server
 # Configurations: Debug
 # =============================================================================
 
@@ -40,6 +40,37 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = /home/addar/web-server/build/
+# =============================================================================
+# Object build statements for EXECUTABLE target web-server
+
+
+#############################################
+# Order-only phony target for web-server
+
+build cmake_object_order_depends_target_web-server: phony || CMakeFiles/web-server.dir
+
+build CMakeFiles/web-server.dir/main.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/main.cpp || cmake_object_order_depends_target_web-server
+  DEP_FILE = CMakeFiles/web-server.dir/main.cpp.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/web-server.dir
+  OBJECT_FILE_DIR = CMakeFiles/web-server.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target web-server
+
+
+#############################################
+# Link the executable web-server
+
+build web-server: CXX_EXECUTABLE_LINKER__web-server_Debug CMakeFiles/web-server.dir/main.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/web-server.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = web-server
+  TARGET_PDB = web-server.dbg
+
 
 #############################################
 # Utility command for Experimental
@@ -207,45 +238,6 @@ build ContinuousMemCheck: phony CMakeFiles/ContinuousMemCheck
 # Utility command for ContinuousSubmit
 
 build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
-
-# =============================================================================
-# Object build statements for EXECUTABLE target server
-
-
-#############################################
-# Order-only phony target for server
-
-build cmake_object_order_depends_target_server: phony || CMakeFiles/server.dir
-
-build CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server_unscanned_Debug /home/addar/web-server/main.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = CMakeFiles/server.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/addar/web-server/include
-  OBJECT_DIR = CMakeFiles/server.dir
-  OBJECT_FILE_DIR = CMakeFiles/server.dir
-
-build CMakeFiles/server.dir/src/http_server.cpp.o: CXX_COMPILER__server_unscanned_Debug /home/addar/web-server/src/http_server.cpp || cmake_object_order_depends_target_server
-  DEP_FILE = CMakeFiles/server.dir/src/http_server.cpp.o.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/addar/web-server/include
-  OBJECT_DIR = CMakeFiles/server.dir
-  OBJECT_FILE_DIR = CMakeFiles/server.dir/src
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target server
-
-
-#############################################
-# Link the executable server
-
-build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/main.cpp.o CMakeFiles/server.dir/src/http_server.cpp.o
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/server.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = server
-  TARGET_PDB = server.dbg
 
 
 #############################################
@@ -517,7 +509,7 @@ build CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}CMakeFiles/ContinuousS
 #############################################
 # Folder: /home/addar/web-server/build
 
-build all: phony server
+build all: phony web-server
 
 # =============================================================================
 # Built-in targets

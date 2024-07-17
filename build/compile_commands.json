@@ -1,14 +1,8 @@
 [
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/g++-13 -I/home/addar/web-server/include -g -std=gnu++20 -o CMakeFiles/server.dir/main.cpp.o -c /home/addar/web-server/main.cpp",
+  "command": "/usr/bin/c++ -g -o CMakeFiles/web-server.dir/main.cpp.o -c /home/addar/web-server/main.cpp",
   "file": "/home/addar/web-server/main.cpp",
-  "output": "CMakeFiles/server.dir/main.cpp.o"
-},
-{
-  "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/g++-13 -I/home/addar/web-server/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/http_server.cpp.o -c /home/addar/web-server/src/http_server.cpp",
-  "file": "/home/addar/web-server/src/http_server.cpp",
-  "output": "CMakeFiles/server.dir/src/http_server.cpp.o"
+  "output": "CMakeFiles/web-server.dir/main.cpp.o"
 }
 ]

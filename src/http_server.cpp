@@ -1,139 +1,186 @@
 #include "http_server.hpp"
-
 #include <iostream>
+#include <cstdlib>
+#include <cstring>
 #include <unistd.h>
-#include <format>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <unordered_set>
+#include <sstream>
+#include <vector>
+#include <regex>
+#include <thread>
+#include <filesystem>
+#include <fstream>
+#include <string_view>
 
-namespace {
 const int BUFFER_SIZE = 30720;
-
-void log(const std::string& msg) { std::cout << msg << std::endl; }
-
-void exitWithError(const std::string& errorMessage) {
-    log("ERROR: " + errorMessage);
-    exit(1);
-}
-} // namespace
 
 namespace http {
 
-TcpServer::TcpServer(const std::string& ip_address, int port)
+Server::Server(std::string_view ip_address, int port, int connection_backlog)
     : m_ip_address(ip_address),
       m_port(port),
-      m_socket(),
-      m_client_socket(),
-      m_incomingMessage(),
-      m_socketAddress(),
-      m_socketAddress_len(sizeof(m_socketAddress)),
-      m_serverMessage(buildResponse())
-    {
-        // set up the server's socket address structure
-        m_socketAddress.sin_family = AF_INET;
-        m_socketAddress.sin_port = htons(m_port);
-        m_socketAddress.sin_addr.s_addr = inet_addr(m_ip_address.c_str());
-        // memset(m_socketAddress.sin_zero, '\0', sizeof(m_socketAddress.sin_zero));
-        std::fill(std::begin(m_socketAddress.sin_zero), std::end(m_socketAddress.sin_zero), '\0');
-
-        if (startServer() != 0) {
-            std::string msg = std::format("Failed to start server with PORT: {}",
-                                        ntohs(m_socketAddress.sin_port));
-            log(msg);
-        }
+      m_connection_backlog(connection_backlog),
+      m_valid_paths({"/index.html", "/", "/echo", "/user-agent"}) {
+    if (m_port <= 0 || m_port > 65535) {
+        throw std::invalid_argument("Port number is out of valid range");
     }
 
-TcpServer::~TcpServer() { closeServer(); }
+    // Initialize server address structure
+    m_server_addr.sin_family = AF_INET;
+    m_server_addr.sin_addr.s_addr = INADDR_ANY;
+    m_server_addr.sin_port = htons(m_port);
+    std::fill(std::begin(m_server_addr.sin_zero), std::end(m_server_addr.sin_zero), '\0');
 
-int TcpServer::startServer() {
-    // create server's socket
-    m_socket = socket(AF_INET, SOCK_STREAM, 0);
-    if (m_socket < 0) {
-        exitWithError("Cannot create socket");
+    // Attempt to start the server
+    if (startServer() != 0) {
+        std::cerr << "Failed to start server\n";
+        throw std::runtime_error("Failed to start server");
+    }
+}
+
+std::string Server::extractURLPath(const std::vector<std::string>& parsed_request) {
+    return parsed_request[1];
+}
+
+std::string Server::extractHeader(const std::string& header_name, const std::string& request) {
+    std::regex regex_pattern("User-Agent: (.*)\r\n");
+    std::smatch match;
+
+    if (std::regex_search(request, match, regex_pattern) && match.size() > 1) {
+        return match.str(1);
+    } else {
+        return "";
+    }
+}
+
+int Server::startServer() {
+    m_server_socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (m_server_socket_fd < 0) {
+        std::cerr << "Failed to create server socket\n";
         return 1;
     }
 
-    // bind the socket to the address and port
-    if (bind(m_socket, (sockaddr*) &m_socketAddress, m_socketAddress_len) < 0) {
-        exitWithError("Cannot bind socket to address");
+    int reuse = 1;
+    if (setsockopt(m_server_socket_fd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse)) < 0) {
+        std::cerr << "setsockopt failed\n";
+    }
+
+    if (bind(m_server_socket_fd, (struct sockaddr *) &m_server_addr, sizeof(m_server_addr)) != 0) {
+        std::cerr << "Failed to bind to PORT " << m_port << "\n";
         return 1;
     }
 
     return 0;
 }
 
-void TcpServer::closeServer() {
-    close(m_socket);
-    close(m_client_socket);
-    exit(0);
+int Server::acceptConnection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) {
+    int client_socket_fd = accept(m_server_socket_fd, m_client_addr, m_client_addr_len);
+    if (client_socket_fd < 0) {
+        std::cerr << "accepting client connection failed\n";
+        exit(1);
+    }
+    return client_socket_fd;
 }
 
-void TcpServer::startListening() {
-    // listen for incoming connections (up to 20)
-    if (listen(m_socket, 20) < 0) {
-        exitWithError("Socket listen failed");
-    }
+void Server::requestHandler(int client_socket_fd) {
+      int bytesReceived {};
+      char buffer[BUFFER_SIZE] = {0};
+      bytesReceived = read(client_socket_fd, buffer, BUFFER_SIZE);
+      if (bytesReceived < 0) {
+        std::cerr << "Failed to read from client\n";
+        exit(1);
+      }
+      std::cout << "Request from client: " << buffer << std::endl;
+      std::vector<std::string> parsed_req = parse_request(buffer);
 
-    std::string msg =
-        std::format("\n*** Listening on ADDRESS: {} PORT: {} ***\n\n", 
-                                    inet_ntoa(m_socketAddress.sin_addr), 
-                                    ntohs(m_socketAddress.sin_port));
-    log(msg);
+      std::string m_message {};
+      std::string url_path = extractURLPath(parsed_req);
+      std::string ok_message = "HTTP/1.1 200 OK\r\n\r\n";
+      std::string ok_message_2 = "HTTP/1.1 200 OK\r\n";
+
+      if (url_path == "/index.html") {
+        m_message = ok_message;
+      } else if (url_path == "/") {
+        m_message = ok_message;
+      } else if (url_path.starts_with("/echo")) {
+        std::string suffix_path = extractSuffixPath(url_path);
+        m_message = ok_message_2 + "Content-Type: text/plain\r\n" + "Content-Length: " + std::to_string(suffix_path.length()) + "\r\n\r\n" + suffix_path;
+      } else if (url_path == "/user-agent") {
+        std::string user_agent = extractHeader("User-Agent", buffer);
+        m_message = ok_message_2 + "Content-Type: text/plain\r\n" + "Content-Length: " + std::to_string(user_agent.length()) + "\r\n\r\n" + user_agent;
+      } else if (url_path.starts_with("/files")) {
+        std::string suffix_path = extractSuffixPath(url_path);
+        std::string file_path = "/tmp/data/codecrafters.io/http-server-tester/" + suffix_path;
+        if (std::filesystem::exists(file_path)) {
+          std::ifstream fin(file_path);
+          if (fin.fail()) {
+            std::cerr << "Failed to open file\n";
+            exit(1);
+          }
+          std::ostringstream oss;
+          oss << fin.rdbuf();
+          std::string file_content = oss.str();
+          std::cout << "File content: " << file_content << std::endl;
+          auto file_size = std::filesystem::file_size(file_path);
+          m_message = "HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\nContent-Length: " + std::to_string(file_size) + "\r\n\r\n" + file_content;
+        } else {
+          m_message = "HTTP/1.1 404 Not Found\r\n\r\n";
+        }
+      } else {
+        m_message = "HTTP/1.1 404 Not Found\r\n\r\n";
+      }
+
+      write(client_socket_fd, m_message.c_str(), m_message.size());
+
+      close(client_socket_fd);
+}
+
+int Server::startListening() {
+    // start listening and limit the number of connections
+    if (listen(m_server_socket_fd, m_connection_backlog) != 0) {
+      std::cerr << "listen failed\n";
+      return 1;
+    }
+    std::cout << "Server listening on port " << m_port << std::endl;
 
     // accept incoming connections
-    int bytesReceived {};
     while (true) {
-        log("====== Waiting for a new connection ======\n\n\n");
-        acceptConnection();
+      struct sockaddr_in m_client_addr;
+      int m_client_addr_len = sizeof(m_client_addr);
+      int client_socket_fd = acceptConnection((struct sockaddr *) &m_client_addr, (socklen_t *) &m_client_addr_len);
 
-        char buffer[BUFFER_SIZE] = {0};
-        bytesReceived = read(m_client_socket, buffer, BUFFER_SIZE);
-        if (bytesReceived < 0) {
-            exitWithError("Failed to read bytes from client socket connection");
-        }
-
-        std::string msg = "------ Received Request from client ------\n\n";
-        log(msg);
-        log(buffer);
-
-        sendResponse();
-
-        close(m_client_socket);
+      std::thread t(&Server::requestHandler, this, client_socket_fd);
+      t.detach();
     }
+
+    return 0;
 }
 
-void TcpServer::acceptConnection() {
-    // create a new socket with a connection thread
-    m_client_socket =
-        accept(m_socket, (sockaddr*) &m_socketAddress, &m_socketAddress_len);
-    if (m_client_socket < 0) {
-        std::string msg = std::format("Server failed to accept incoming connection from ADDRESS: {}; PORT: {}", 
-                                    inet_ntoa(m_socketAddress.sin_addr), 
-                                    ntohs(m_socketAddress.sin_port));
-        exitWithError(msg);
-    }
+std::string Server::extractSuffixPath(std::string_view url_path) {
+    int last_slash = url_path.find_last_of("/");
+    return std::string(url_path.substr(last_slash + 1));
 }
 
-std::string TcpServer::buildResponse() {
-    std::string htmlFile =
-        "<!DOCTYPE html><html lang=\"en\"><body><h1> HOME </h1><p> Hello from "
-        "your Server :) </p></body></html>";
-    
-    std::string msg = std::format("HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: {}\n\n{}",
-                                htmlFile.size(), 
-                                htmlFile);
-    return msg;
+
+std::vector<std::string> Server::parse_request(const char* buffer) {
+    std::vector<std::string> m_parsed_http_req {};
+    // Parse the HTTP m_request to extract the URL path
+    std::string request(buffer);
+    std::istringstream iss(request);
+    std::string token;
+    while (iss >> token) {
+      m_parsed_http_req.push_back(token);
+    }
+    return m_parsed_http_req;
 }
 
-void TcpServer::sendResponse() {
-    long bytesSent {};
-
-    bytesSent =
-        write(m_client_socket, m_serverMessage.c_str(), m_serverMessage.size());
-
-    if (bytesSent == m_serverMessage.size()) {
-        log("------ Server Response sent to client ------\n\n");
-    } else {
-        log("Error sending response to client");
-    }
+Server::~Server() {
+    close(m_server_socket_fd);
+    exit(0);
 }
 
 } // namespace http
