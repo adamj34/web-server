@@ -14,6 +14,28 @@ target_sources(web-server PRIVATE
     src/http_response.cpp
 )
 
-include(CTest)
-enable_testing()
+Include(FetchContent)
 
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.4.0 
+)
+
+FetchContent_MakeAvailable(Catch2)
+
+add_executable(tests
+    src/http_server.cpp
+    src/http_request.cpp
+    src/http_response.cpp
+    tests/http_request_test.cpp
+    tests/http_response_test.cpp
+    tests/http_server_test.cpp
+)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
+include(CTest)
+include(Catch)
+enable_testing()
+catch_discover_tests(tests)

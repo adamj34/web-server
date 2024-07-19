@@ -20,10 +20,10 @@ void Request::parse() {
     // Parse the first line of the request
     // eg. "HTTP/1.1 GET /index.html"
     if (std::getline(iss, line)) {
-        std::istringstream first_line_iss{line};
+        std::istringstream first_line_iss {line};
         first_line_iss >> method >> path >> http_version;
     } else {
-        std::cerr << "Error parsing request" << std::endl;
+        std::cerr << "Error parsing the first line of the request" << std::endl;
         return;
     }
 
@@ -49,7 +49,11 @@ void Request::parse() {
         http::methodToStr(Method::PATCH)
     };
     if (body_methods.contains(method)) {
-        std::getline(iss, body, '\0');
+        // read the rest of the request as the body
+        if (!std::getline(iss, body, '\0')) {
+            std::cerr << "Error parsing the body of the request" << std::endl;
+            return;
+        } 
     } else {
         body = "";
     }
@@ -63,6 +67,7 @@ std::string Request::to_string() {
     }
     oss << "\r\n";
     oss << body;
+
     return oss.str();
 }
 

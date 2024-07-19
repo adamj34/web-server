@@ -64,6 +64,11 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "variant": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "condition_variable": "cpp",
+        "list": "cpp",
+        "set": "cpp",
+        "future": "cpp",
+        "mutex": "cpp"
     }
 }

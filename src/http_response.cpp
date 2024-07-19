@@ -13,12 +13,11 @@ std::string Response::to_string() {
     }
     oss << "\r\n";
     oss << body;
+    
     return oss.str();
 }
 
 } // namespace http
-
-
 
 
 
