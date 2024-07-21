@@ -1,6 +1,7 @@
 #include "http_server.hpp"
 #include "http_request.hpp"
 #include "http_response.hpp"
+#include "thread_pool.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
@@ -18,7 +19,7 @@
 #include <fstream>
 #include <string_view>
 
-const int BUFFER_SIZE = 30720;
+constexpr int BUFFER_SIZE = 30720;
 
 namespace http {
 
@@ -41,54 +42,56 @@ Server::Server(std::string_view ip_address, int port, int connection_backlog)
     std::fill(std::begin(m_server_addr.sin_zero), std::end(m_server_addr.sin_zero), '\0');
 
     // Attempt to start the server
-    if (startServer() != 0) {
+    try {
+        startServer();
+    } catch (...) {
         std::cerr << "Failed to start server\n";
-        throw std::runtime_error("Failed to start server");
+        throw;
     }
 }
 
-int Server::startServer() {
+void Server::startServer() {
     m_server_socket_fd = socket(AF_INET, SOCK_STREAM, 0);
     if (m_server_socket_fd < 0) {
         std::cerr << "Failed to create server socket\n";
-        return 1;
+        throw std::runtime_error("Failed to create server socket");
     }
 
     // Allow the socket to be reused immediately after the server is closed
     int reuse = 1;
     if (setsockopt(m_server_socket_fd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse)) < 0) {
         std::cerr << "setsockopt failed\n";
+        throw std::runtime_error("setsockopt failed");
     }
 
-    if (bind(m_server_socket_fd, (struct sockaddr *) &m_server_addr, sizeof(m_server_addr)) != 0) {
+    if (bind(m_server_socket_fd, (struct sockaddr *) &m_server_addr, sizeof(m_server_addr)) < 0) {
         std::cerr << "Failed to bind to PORT " << m_port << "\n";
-        return 1;
+        throw std::runtime_error("Failed to bind to port");
     }
 
-    return 0;
 }
 
-int Server::acceptConnection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) {
+int Server::acceptConnection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) const {
     int client_socket_fd = accept(m_server_socket_fd, m_client_addr, m_client_addr_len);
     if (client_socket_fd < 0) {
         std::cerr << "accepting client connection failed\n";
-        std::exit(1);
+        throw std::runtime_error("Failed to accept client connection");
     }
     return client_socket_fd;
 }
 
-void Server::requestHandler(int client_socket_fd) {
+void Server::requestHandler(int client_socket_fd) const {
 	int bytesReceived = {0};
 	char buffer[BUFFER_SIZE] = {0};
 	bytesReceived = read(client_socket_fd, buffer, BUFFER_SIZE);
 	if (bytesReceived < 0) {
 		std::cerr << "Failed to read from client\n";
-		std::exit(1);
+        throw std::runtime_error("Failed to read from client");
 	}
 	std::cout << "Request from client: " << buffer << std::endl;
-
-	http::Request request{buffer};
-	http::Response response_body;
+    
+	http::Request request {buffer};
+	http::Response response_body {};
 	response_body.http_version = "HTTP/1.1";
 	response_body.status = "200";
 	response_body.message = "OK";
@@ -99,31 +102,30 @@ void Server::requestHandler(int client_socket_fd) {
 	ssize_t bytes_written = write(client_socket_fd, response_body_str.c_str(), response_body_str.size());
     if (bytes_written < 0) {
         std::cerr << "Failed to write to client\n";
-        std::exit(1);
+        throw std::runtime_error("Failed to write to client");
     }
 
 	close(client_socket_fd);
 }
 
-int Server::startListening() {
+void Server::startListening() {
     // start listening and limit the number of connections
-    if (listen(m_server_socket_fd, m_connection_backlog) != 0) {
+    if (listen(m_server_socket_fd, m_connection_backlog) < 0) {
       std::cerr << "listen failed\n";
-      return 1;
+      throw std::runtime_error("Failed to listen on server socket");
     }
     std::cout << "Server listening on port " << m_port << std::endl;
-
+    
     // accept incoming connections
     while (true) {
       struct sockaddr_in m_client_addr;
       int m_client_addr_len = sizeof(m_client_addr);
       int client_socket_fd = acceptConnection((struct sockaddr *) &m_client_addr, (socklen_t *) &m_client_addr_len);
 
-      std::thread t(&Server::requestHandler, this, client_socket_fd);
-      t.detach();
+    std::function<void()> f = std::bind(&Server::requestHandler, std::cref(*this), client_socket_fd);
+        m_thread_pool.submit(f);
     }
 
-    return 0;
 }
 
 Server::~Server() {

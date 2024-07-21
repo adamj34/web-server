@@ -15,16 +15,20 @@ Request::Request(const std::string& raw_request)
 
 void Request::parse() {
     std::istringstream iss{raw_request};
+    if (!iss) {
+        std::cerr << "Failed to create string stream from the raw request" << std::endl;
+        throw std::runtime_error("Failed to create string stream from the raw request");
+    }
     std::string line;
 
-    // Parse the first line of the request
+    // Parse the first line of the request based on the HTTP standard
     // eg. "HTTP/1.1 GET /index.html"
     if (std::getline(iss, line)) {
         std::istringstream first_line_iss {line};
         first_line_iss >> method >> path >> http_version;
     } else {
         std::cerr << "Error parsing the first line of the request" << std::endl;
-        return;
+        throw std::runtime_error("Error parsing the first line of the request");
     }
 
     // Parse the headers
@@ -43,16 +47,17 @@ void Request::parse() {
     }
 
     // Parse the body
-    std::unordered_set<std::string> body_methods = {
-        http::methodToStr(Method::POST),
-        http::methodToStr(Method::PUT),
-        http::methodToStr(Method::PATCH)
-    };
-    if (body_methods.contains(method)) {
+    const http::Method method_enum = http::methodToStr(method);
+    if (method_enum == http::Method::UNKNOWN) {
+        std::cerr << "Unknown method: " << method << std::endl;
+        throw std::runtime_error("Unknown method used in the request");
+    }
+
+    if (http::requiresBody(method_enum)) {
         // read the rest of the request as the body
         if (!std::getline(iss, body, '\0')) {
             std::cerr << "Error parsing the body of the request" << std::endl;
-            return;
+            throw std::runtime_error("Error parsing the body of the request");
         } 
     } else {
         body = "";
@@ -60,7 +65,12 @@ void Request::parse() {
 }
 
 std::string Request::to_string() {
-    std::ostringstream oss;
+    if (method.empty() || path.empty() || http_version.empty()) {
+        std::cerr << "Request is missing required fields" << std::endl;
+        throw std::invalid_argument("Request is missing required fields");
+    }
+
+    std::ostringstream oss {};
     oss << method << " " << path << " " << http_version << "\r\n";
     for (const auto& [header_name, header_value] : headers) {
         oss << header_name << ": " << header_value << "\r\n";

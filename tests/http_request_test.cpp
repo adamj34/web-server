@@ -33,15 +33,9 @@ TEST_CASE("Request parsing") {
         REQUIRE(request.body == "Hello World");
     }
 
-    // SECTION("Invalid request") {
-    //     std::string raw_request = "INVALID REQUEST";
-    //     http::Request request(raw_request);
+    SECTION("Invalid request") {
+        std::string raw_request = "INVALID REQUEST";
 
-    //     // Check that the request is not parsed successfully
-    //     REQUIRE(request.method.empty());
-    //     REQUIRE(request.path.empty());
-    //     REQUIRE(request.http_version.empty());
-    //     REQUIRE(request.headers.empty());
-    //     REQUIRE(request.body.empty());
-    // }
+        REQUIRE_THROWS_AS(http::Request(raw_request), std::runtime_error);
+    }
 }

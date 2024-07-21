@@ -6,20 +6,22 @@ enum class Method {
     POST,
     PUT,
     PATCH,
-    DELETE
+    DELETE,
+    UNKNOWN
 };
 
 
-const char* methodToStr(Method method) {
-    using enum Method;
-    switch (method) {
-        case GET:    return "GET";
-        case POST:   return "POST";
-        case PUT:    return "PUT";
-        case PATCH:  return "PATCH";
-        case DELETE: return "DELETE";
-        default:     return "UNKNOWN";
-    }
+constexpr Method methodToStr(std::string_view methodStr) {
+    if (methodStr == "GET") return Method::GET;
+    if (methodStr == "POST") return Method::POST;
+    if (methodStr == "PUT") return Method::PUT;
+    if (methodStr == "PATCH") return Method::PATCH;
+    if (methodStr == "DELETE") return Method::DELETE;
+    return Method::UNKNOWN; 
 }
+
+constexpr bool requiresBody(Method method) {
+        return method == Method::POST || method == Method::PUT || method == Method::PATCH;
+    }
 
 } // namespace http

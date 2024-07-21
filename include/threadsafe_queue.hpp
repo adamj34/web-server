@@ -1,3 +1,6 @@
+#ifndef THREADSAFE_QUEUE_HPP
+#define THREADSAFE_QUEUE_HPP
+
 #include <queue>
 #include <mutex>
 #include <condition_variable>
@@ -11,7 +14,7 @@ class threadsafe_queue {
         std::queue<std::shared_ptr<T>> data_queue;
         std::condition_variable data_cond;
     public:
-        threadsafe_queue() = default;
+        threadsafe_queue() noexcept = default;
 
         void push(T new_value) {
             // allocate memory for the new value (outside the lock)
@@ -69,3 +72,5 @@ class threadsafe_queue {
             return data_queue.empty();
         }
 };
+
+#endif // THREADSAFE_QUEUE_HPP
