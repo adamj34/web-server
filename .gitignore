@@ -31,5 +31,7 @@
 *.out
 *.app
 
-p.cpp
 build
+p*
+main*
+

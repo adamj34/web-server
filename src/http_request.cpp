@@ -38,8 +38,8 @@ void Request::parse() {
             line.pop_back();
         }
 
-        std::string header_name;
-        std::string header_value;
+        std::string header_name {};
+        std::string header_value {};
         std::size_t colon_pos = line.find(':');
         header_name = line.substr(0, colon_pos);
         header_value = line.substr(colon_pos + 2);
@@ -54,13 +54,14 @@ void Request::parse() {
     }
 
     if (http::requiresBody(method_enum)) {
-        // read the rest of the request as the body
-        if (!std::getline(iss, body, '\0')) {
-            std::cerr << "Error parsing the body of the request" << std::endl;
-            throw std::runtime_error("Error parsing the body of the request");
-        } 
-    } else {
-        body = "";
+        // Check if there is a body
+        if (iss.peek() != EOF) {
+            // read the rest of the request as the body
+            if (!std::getline(iss, body, '\0')) {
+                std::cerr << "Error parsing the body of the request" << std::endl;
+                throw std::runtime_error("Error parsing the body of the request");
+            } 
+        }
     }
 }
 
