@@ -72,13 +72,13 @@ TEST_CASE("Request parsing") {
                                     "\r\n"
                                     "Hello World";
 
-        REQUIRE_THROWS_AS(http::Request{raw_request}, std::runtime_error);
+        REQUIRE_THROWS_AS(http::Request{raw_request}, std::invalid_argument);
     }
 
     SECTION("Invalid request") {
         std::string raw_request = "INVALID REQUEST";
 
-        REQUIRE_THROWS_AS(http::Request{raw_request}, std::runtime_error);
+        REQUIRE_THROWS_AS(http::Request{raw_request}, std::invalid_argument);
     }
 }
 

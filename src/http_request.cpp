@@ -1,5 +1,5 @@
 #include "http_request.hpp"
-#include "http_methods.hpp"
+#include "http_methods_helper.hpp"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -47,13 +47,9 @@ void Request::parse() {
     }
 
     // Parse the body
-    const http::Method method_enum = http::methodToStr(method);
-    if (method_enum == http::Method::UNKNOWN) {
-        std::cerr << "Unknown method: " << method << std::endl;
-        throw std::runtime_error("Unknown method used in the request");
-    }
+    const http::MethodsHelper::Method method_enum = http::MethodsHelper::str_to_method(method);
 
-    if (http::requiresBody(method_enum)) {
+    if (http::MethodsHelper::requiresBody(method_enum)) {
         // Check if there is a body
         if (iss.peek() != EOF) {
             // read the rest of the request as the body
