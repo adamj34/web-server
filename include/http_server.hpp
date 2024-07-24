@@ -2,6 +2,7 @@
 #define SERVER_HPP
 
 #include "thread_pool.hpp"
+#include "endpoint_manager.hpp"
 #include <string>
 #include <string_view>
 #include <vector>
@@ -19,16 +20,18 @@ private:
     int m_port;
     struct sockaddr_in m_server_addr;
     int m_connection_backlog;
-    std::unordered_set<std::string> m_valid_paths;
+    endpoint_manager m_endpoint_manager;
 
-    void startServer();
-    int acceptConnection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) const;
-    void requestHandler(int client_socket_fd) const;
+
+    void start_server();
+    int accept_connection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) const;
+    void request_handler(int client_socket_fd) const;
 
 public:
     Server(std::string_view ip_address, int port, int connection_backlog);
     ~Server();
-    void startListening();
+    void start_listening();
+    void register_endpoint(const std::string_view path, const std::string_view method, std::function<void()> callback);
 };
 
 } // namespace http

@@ -51,28 +51,35 @@ build cmake_object_order_depends_target_web-server: phony || CMakeFiles/web-serv
 
 build CMakeFiles/web-server.dir/main.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/main.cpp || cmake_object_order_depends_target_web-server
   DEP_FILE = CMakeFiles/web-server.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include
   OBJECT_DIR = CMakeFiles/web-server.dir
   OBJECT_FILE_DIR = CMakeFiles/web-server.dir
 
 build CMakeFiles/web-server.dir/src/http_server.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/src/http_server.cpp || cmake_object_order_depends_target_web-server
   DEP_FILE = CMakeFiles/web-server.dir/src/http_server.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include
   OBJECT_DIR = CMakeFiles/web-server.dir
   OBJECT_FILE_DIR = CMakeFiles/web-server.dir/src
 
 build CMakeFiles/web-server.dir/src/http_request.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/src/http_request.cpp || cmake_object_order_depends_target_web-server
   DEP_FILE = CMakeFiles/web-server.dir/src/http_request.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include
   OBJECT_DIR = CMakeFiles/web-server.dir
   OBJECT_FILE_DIR = CMakeFiles/web-server.dir/src
 
 build CMakeFiles/web-server.dir/src/http_response.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/src/http_response.cpp || cmake_object_order_depends_target_web-server
   DEP_FILE = CMakeFiles/web-server.dir/src/http_response.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/addar/web-server/include
+  OBJECT_DIR = CMakeFiles/web-server.dir
+  OBJECT_FILE_DIR = CMakeFiles/web-server.dir/src
+
+build CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/src/endpoint_manager.cpp || cmake_object_order_depends_target_web-server
+  DEP_FILE = CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o.d
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include
   OBJECT_DIR = CMakeFiles/web-server.dir
   OBJECT_FILE_DIR = CMakeFiles/web-server.dir/src
@@ -85,7 +92,7 @@ build CMakeFiles/web-server.dir/src/http_response.cpp.o: CXX_COMPILER__web-serve
 #############################################
 # Link the executable web-server
 
-build web-server: CXX_EXECUTABLE_LINKER__web-server_Debug CMakeFiles/web-server.dir/main.cpp.o CMakeFiles/web-server.dir/src/http_server.cpp.o CMakeFiles/web-server.dir/src/http_request.cpp.o CMakeFiles/web-server.dir/src/http_response.cpp.o
+build web-server: CXX_EXECUTABLE_LINKER__web-server_Debug CMakeFiles/web-server.dir/main.cpp.o CMakeFiles/web-server.dir/src/http_server.cpp.o CMakeFiles/web-server.dir/src/http_request.cpp.o CMakeFiles/web-server.dir/src/http_response.cpp.o CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/web-server.dir
   POST_BUILD = :
@@ -104,42 +111,49 @@ build cmake_object_order_depends_target_tests: phony || cmake_object_order_depen
 
 build CMakeFiles/tests.dir/src/http_server.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/src/http_server.cpp || cmake_object_order_depends_target_tests
   DEP_FILE = CMakeFiles/tests.dir/src/http_server.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/src
 
 build CMakeFiles/tests.dir/src/http_request.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/src/http_request.cpp || cmake_object_order_depends_target_tests
   DEP_FILE = CMakeFiles/tests.dir/src/http_request.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/src
 
 build CMakeFiles/tests.dir/src/http_response.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/src/http_response.cpp || cmake_object_order_depends_target_tests
   DEP_FILE = CMakeFiles/tests.dir/src/http_response.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/src
+
+build CMakeFiles/tests.dir/src/endpoint_manager.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/src/endpoint_manager.cpp || cmake_object_order_depends_target_tests
+  DEP_FILE = CMakeFiles/tests.dir/src/endpoint_manager.cpp.o.d
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/src
 
 build CMakeFiles/tests.dir/tests/http_request_test.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/tests/http_request_test.cpp || cmake_object_order_depends_target_tests
   DEP_FILE = CMakeFiles/tests.dir/tests/http_request_test.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
 
 build CMakeFiles/tests.dir/tests/http_response_test.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/tests/http_response_test.cpp || cmake_object_order_depends_target_tests
   DEP_FILE = CMakeFiles/tests.dir/tests/http_response_test.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
 
 build CMakeFiles/tests.dir/tests/http_server_test.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/tests/http_server_test.cpp || cmake_object_order_depends_target_tests
   DEP_FILE = CMakeFiles/tests.dir/tests/http_server_test.cpp.o.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g -std=gnu++23
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
@@ -152,7 +166,7 @@ build CMakeFiles/tests.dir/tests/http_server_test.cpp.o: CXX_COMPILER__tests_uns
 #############################################
 # Link the executable tests
 
-build tests tests_tests-b12d07c.cmake | ${cmake_ninja_workdir}tests_tests-b12d07c.cmake: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/src/http_server.cpp.o CMakeFiles/tests.dir/src/http_request.cpp.o CMakeFiles/tests.dir/src/http_response.cpp.o CMakeFiles/tests.dir/tests/http_request_test.cpp.o CMakeFiles/tests.dir/tests/http_response_test.cpp.o CMakeFiles/tests.dir/tests/http_server_test.cpp.o | _deps/catch2-build/src/libCatch2Maind.a _deps/catch2-build/src/libCatch2d.a || _deps/catch2-build/src/libCatch2Maind.a _deps/catch2-build/src/libCatch2d.a
+build tests tests_tests-b12d07c.cmake | ${cmake_ninja_workdir}tests_tests-b12d07c.cmake: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/src/http_server.cpp.o CMakeFiles/tests.dir/src/http_request.cpp.o CMakeFiles/tests.dir/src/http_response.cpp.o CMakeFiles/tests.dir/src/endpoint_manager.cpp.o CMakeFiles/tests.dir/tests/http_request_test.cpp.o CMakeFiles/tests.dir/tests/http_response_test.cpp.o CMakeFiles/tests.dir/tests/http_server_test.cpp.o | _deps/catch2-build/src/libCatch2Maind.a _deps/catch2-build/src/libCatch2d.a || _deps/catch2-build/src/libCatch2Maind.a _deps/catch2-build/src/libCatch2d.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/catch2-build/src/libCatch2Maind.a  _deps/catch2-build/src/libCatch2d.a
   OBJECT_DIR = CMakeFiles/tests.dir
@@ -645,721 +659,721 @@ build cmake_object_order_depends_target_Catch2: phony || _deps/catch2-build/src/
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/catch_chronometer.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/benchmark/catch_chronometer.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/catch_chronometer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_benchmark_function.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/benchmark/detail/catch_benchmark_function.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_benchmark_function.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_run_for_at_least.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/benchmark/detail/catch_run_for_at_least.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_run_for_at_least.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/benchmark/detail/catch_stats.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail/catch_stats.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/benchmark/detail
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generator_exception.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/generators/catch_generator_exception.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generator_exception.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/generators/catch_generators.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/generators/catch_generators_random.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators/catch_generators_random.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/generators
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_automake.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_automake.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_common_base.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_common_base.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_compact.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_compact.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_console.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_console.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_cumulative_base.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_cumulative_base.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_event_listener.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_event_listener.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_event_listener.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_helpers.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_helpers.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_helpers.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_junit.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_junit.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_multi.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_multi.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_registrars.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_registrars.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_sonarqube.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_sonarqube.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_streaming_base.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_streaming_base.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_tap.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_tap.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_teamcity.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_teamcity.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/reporters/catch_reporter_xml.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters/catch_reporter_xml.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/reporters
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_capture.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_capture.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_capture.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_config.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_config.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_config.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_exception.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_exception.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_exception.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_generatortracker.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_generatortracker.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_registry_hub.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_registry_hub.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_registry_hub.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_reporter.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter_factory.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_reporter_factory.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_reporter_factory.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_testcase.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/interfaces/catch_interfaces_testcase.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces/catch_interfaces_testcase.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/interfaces
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_approx.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_approx.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_assertion_result.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_assertion_result.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_config.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_config.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_get_random_seed.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_get_random_seed.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_get_random_seed.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_message.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_message.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_registry_hub.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_registry_hub.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_session.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_session.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tag_alias_autoregistrar.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_tag_alias_autoregistrar.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tag_alias_autoregistrar.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_test_case_info.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_case_info.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_test_spec.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_test_spec.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_timer.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_timer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_tostring.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_tostring.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_totals.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_totals.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_translate_exception.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_translate_exception.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_translate_exception.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/catch_version.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/catch_version.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_assertion_handler.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_assertion_handler.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_case_insensitive_comparisons.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_case_insensitive_comparisons.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_clara.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_clara.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_commandline.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_commandline.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_console_colour.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_console_colour.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_context.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_context.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_debug_console.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debug_console.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_debugger.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_debugger.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_decomposer.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_decomposer.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_decomposer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_enforce.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enforce.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_values_registry.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_enum_values_registry.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_enum_values_registry.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_errno_guard.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_errno_guard.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_errno_guard.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_exception_translator_registry.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_exception_translator_registry.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_fatal_condition_handler.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_fatal_condition_handler.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_floating_point_helpers.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_floating_point_helpers.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_getenv.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_getenv.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_getenv.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_istream.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_istream.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_lazy_expr.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_lazy_expr.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_lazy_expr.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_leak_detector.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_leak_detector.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_leak_detector.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_list.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_list.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_message_info.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_message_info.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_message_info.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_output_redirect.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_output_redirect.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_parse_numbers.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_parse_numbers.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_parse_numbers.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_polyfills.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_polyfills.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_polyfills.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_random_number_generator.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_number_generator.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_random_seed_generation.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_random_seed_generation.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_reporter_registry.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_registry.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_reporter_spec_parser.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reporter_spec_parser.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_result_type.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_result_type.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_result_type.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_reusable_string_stream.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_reusable_string_stream.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_run_context.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_run_context.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_section.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_section.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_singletons.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_singletons.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_source_line_info.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_source_line_info.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_startup_exception_registry.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_startup_exception_registry.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_startup_exception_registry.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_stdstreams.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stdstreams.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_string_manip.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_string_manip.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_stringref.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_stringref.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_tag_alias_registry.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_tag_alias_registry.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_test_case_info_hasher.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_info_hasher.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_test_case_registry_impl.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_registry_impl.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_test_case_tracker.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_case_tracker.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_failure_exception.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_test_failure_exception.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_failure_exception.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_test_registry.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_registry.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_test_spec_parser.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_test_spec_parser.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_textflow.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_textflow.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_uncaught_exceptions.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_uncaught_exceptions.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_uncaught_exceptions.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_wildcard_pattern.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_wildcard_pattern.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_xmlwriter.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal/catch_xmlwriter.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/internal
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_container_properties.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_container_properties.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_container_properties.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_exception.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_exception.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_exception.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_floating_point.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_floating_point.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_predicate.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_predicate.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_predicate.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_quantifiers.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_quantifiers.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_quantifiers.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_string.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_string.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/catch_matchers_templated.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/catch_matchers_templated.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers
 
 build _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_impl.cpp.o: CXX_COMPILER__Catch2_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/matchers/internal/catch_matchers_impl.cpp || cmake_object_order_depends_target_Catch2
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal/catch_matchers_impl.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2.dir/catch2/matchers/internal
@@ -1391,7 +1405,7 @@ build cmake_object_order_depends_target_Catch2WithMain: phony || cmake_object_or
 
 build _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal/catch_main.cpp.o: CXX_COMPILER__Catch2WithMain_unscanned_Debug /home/addar/web-server/build/_deps/catch2-src/src/catch2/internal/catch_main.cpp || cmake_object_order_depends_target_Catch2WithMain
   DEP_FILE = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal/catch_main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
+  FLAGS = -g -std=gnu++23 -ffile-prefix-map=/home/addar/web-server/build/_deps/catch2-src/=
   INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes
   OBJECT_DIR = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir
   OBJECT_FILE_DIR = _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/catch2/internal

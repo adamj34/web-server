@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(web-server VERSION 0.1.0 LANGUAGES C CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
@@ -12,6 +12,7 @@ target_sources(web-server PRIVATE
     src/http_server.cpp
     src/http_request.cpp
     src/http_response.cpp
+    src/endpoint_manager.cpp
 )
 
 Include(FetchContent)
@@ -28,6 +29,7 @@ add_executable(tests
     src/http_server.cpp
     src/http_request.cpp
     src/http_response.cpp
+    src/endpoint_manager.cpp
     tests/http_request_test.cpp
     tests/http_response_test.cpp
     tests/http_server_test.cpp

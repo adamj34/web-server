@@ -9,13 +9,15 @@ TEST_CASE("Request parsing") {
                                   "\r\n";
         http::Request request{raw_request};
 
-        REQUIRE(request.method == "GET");
-        REQUIRE(request.path == "/index.html");
-        REQUIRE(request.http_version == "HTTP/1.1");
-        REQUIRE(request.headers.size() == 2);
-        REQUIRE(request.headers["Host"] == "example.com");
-        REQUIRE(request.headers["User-Agent"] == "Mozilla/5.0");
-        REQUIRE(request.body.empty());
+        REQUIRE(request.get_method() == http::MethodsHelper::Method::GET);
+        REQUIRE(request.get_method_str() == "GET");
+        REQUIRE(request.get_path() == "/index.html");
+        REQUIRE(request.get_http_version() == "HTTP/1.1");
+        auto headers { request.get_headers() };
+        REQUIRE(headers.size() == 2);
+        REQUIRE(headers["Host"] == "example.com");
+        REQUIRE(headers["User-Agent"] == "Mozilla/5.0");
+        REQUIRE(request.get_body().empty());
     }
 
     SECTION("Request with body - POST") {
@@ -25,12 +27,14 @@ TEST_CASE("Request parsing") {
                                   "Hello World";
         http::Request request{raw_request};
 
-        REQUIRE(request.method == "POST");
-        REQUIRE(request.path == "/submit");
-        REQUIRE(request.http_version == "HTTP/1.1");
-        REQUIRE(request.headers.size() == 1);
-        REQUIRE(request.headers["Content-Length"] == "10");
-        REQUIRE(request.body == "Hello World");
+        REQUIRE(request.get_method() == http::MethodsHelper::Method::POST);
+        REQUIRE(request.get_method_str() == "POST");
+        REQUIRE(request.get_path() == "/submit");
+        REQUIRE(request.get_http_version() == "HTTP/1.1");
+        auto headers { request.get_headers() };
+        REQUIRE(headers.size() == 1);
+        REQUIRE(headers["Content-Length"] == "10");
+        REQUIRE(request.get_body() == "Hello World");
     }
 
     SECTION("Request with body - PUT") {
@@ -42,14 +46,16 @@ TEST_CASE("Request parsing") {
                                   "Hello World";
         http::Request request{raw_request};
 
-        REQUIRE(request.method == "PUT");
-        REQUIRE(request.path == "/update");
-        REQUIRE(request.http_version == "HTTP/1.1");
-        REQUIRE(request.headers.size() == 3);
-        REQUIRE(request.headers["Content-Length"] == "10");
-        REQUIRE(request.headers["Accept"] == "application/json");
-        REQUIRE(request.headers["Origin"] == "http://example.com");
-        REQUIRE(request.body == "Hello World");
+        REQUIRE(request.get_method() == http::MethodsHelper::Method::PUT);
+        REQUIRE(request.get_method_str() == "PUT");
+        REQUIRE(request.get_path() == "/update");
+        REQUIRE(request.get_http_version() == "HTTP/1.1");
+        auto headers { request.get_headers() };
+        REQUIRE(headers.size() == 3);
+        REQUIRE(headers["Content-Length"] == "10");
+        REQUIRE(headers["Accept"] == "application/json");
+        REQUIRE(headers["Origin"] == "http://example.com");
+        REQUIRE(request.get_body() == "Hello World");
     }
 
     SECTION("Request without body - POST") {
@@ -58,12 +64,14 @@ TEST_CASE("Request parsing") {
                                   "\r\n";
         http::Request request{raw_request};
 
-        REQUIRE(request.method == "POST");
-        REQUIRE(request.path == "/submit");
-        REQUIRE(request.http_version == "HTTP/1.1");
-        REQUIRE(request.headers.size() == 1);
-        REQUIRE(request.headers["Content-Length"] == "0");
-        REQUIRE(request.body.empty());
+        REQUIRE(request.get_method() == http::MethodsHelper::Method::POST);
+        REQUIRE(request.get_method_str() == "POST");
+        REQUIRE(request.get_path() == "/submit");
+        REQUIRE(request.get_http_version() == "HTTP/1.1");
+        auto headers { request.get_headers() };
+        REQUIRE(headers.size() == 1);
+        REQUIRE(headers["Content-Length"] == "0");
+        REQUIRE(request.get_body().empty());
     }
 
     SECTION("Requst with missing method") {
