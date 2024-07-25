@@ -1,34 +1,34 @@
 #include "http_server.hpp"
-#include "http_request.hpp"
-#include "http_response.hpp"
 #include "endpoint_manager.hpp"
 #include "http_methods_helper.hpp"
+#include "http_request.hpp"
+#include "http_response.hpp"
 #include "thread_pool.hpp"
-#include <iostream>
+#include <arpa/inet.h>
 #include <cstdlib>
 #include <cstring>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include <unordered_set>
-#include <sstream>
-#include <vector>
-#include <regex>
-#include <thread>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
+#include <netdb.h>
+#include <regex>
+#include <sstream>
 #include <string_view>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <thread>
+#include <unistd.h>
+#include <unordered_set>
+#include <vector>
 
 constexpr int BUFFER_SIZE = 30720;
 
 namespace http {
 
-Server::Server(std::string_view ip_address, int port, int connection_backlog)
-    : m_ip_address(ip_address),
-      m_port(port),
-      m_connection_backlog(connection_backlog) {
+Server::Server(const std::string ip_address, const int port, int connection_backlog)
+    : m_ip_address{ std::move(ip_address) }
+    , m_port{ port }
+    , m_connection_backlog{ connection_backlog } {
     if (m_port <= 0 || m_port > 65535) {
         throw std::invalid_argument("Port number is out of valid range");
     }
@@ -65,11 +65,10 @@ void Server::start_server() {
         throw std::runtime_error("setsockopt failed");
     }
 
-    if (bind(m_server_socket_fd, (struct sockaddr *) &m_server_addr, sizeof(m_server_addr)) < 0) {
+    if (bind(m_server_socket_fd, (struct sockaddr*)&m_server_addr, sizeof(m_server_addr)) < 0) {
         std::cerr << "Failed to bind to PORT " << m_port << "\n";
         throw std::runtime_error("Failed to bind to port");
     }
-
 }
 
 int Server::accept_connection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) const {
@@ -81,60 +80,67 @@ int Server::accept_connection(struct sockaddr* m_client_addr, socklen_t* m_clien
     return client_socket_fd;
 }
 
-void Server::request_handler(int client_socket_fd) const {
-	int bytesReceived = {0};
-	char buffer[BUFFER_SIZE] = {0};
-	bytesReceived = read(client_socket_fd, buffer, BUFFER_SIZE);
-	if (bytesReceived < 0) {
-		std::cerr << "Failed to read from client\n";
+void Server::write_response(const int client_socket_fd, const std::string& response_str) const {
+    ssize_t bytes_written = write(client_socket_fd, response_str.c_str(), response_str.size());
+    if (bytes_written < 0) {
+        std::cerr << "Failed to write to client\n";
+        throw std::runtime_error("Failed to write to client");
+    }
+}
+
+void Server::request_handler(const int client_socket_fd) const {
+    int bytesReceived{ 0 };
+    char buffer[BUFFER_SIZE]{ 0 };
+    bytesReceived = read(client_socket_fd, buffer, BUFFER_SIZE);
+    if (bytesReceived < 0) {
+        std::cerr << "Failed to read from client\n";
         throw std::runtime_error("Failed to read from client");
-	}
-	std::cout << "Request from client: " << buffer << std::endl;
+    }
+    std::cout << "Request from client: " << buffer << std::endl;
 
-    
-	// http::Request request {buffer};
-	// http::Response response_body {};
-	// response_body.http_version = "HTTP/1.1";
-	// response_body.status = "200";
-	// response_body.message = "OK";
-	// response_body.headers["Server"] = "SimpleHTTPServer";
-	// response_body.body = "Hello, world from the server!";
+    // parse the request
+    http::Request request{ buffer };
+    http::MethodsHelper::Method method{ request.get_method() };
+    auto& path{ request.get_path() };
 
-    // std::string response_body_str {response_body.to_string()};
-	// ssize_t bytes_written = write(client_socket_fd, response_body_str.c_str(), response_body_str.size());
-    // if (bytes_written < 0) {
-    //     std::cerr << "Failed to write to client\n";
-    //     throw std::runtime_error("Failed to write to client");
-    // }
+    // Check if the endpoint exists
+    if (!m_endpoint_manager.endpoint_exists(method, path)) {
+        std::cerr << "Endpoint does not exist\n";
+        throw std::runtime_error("Endpoint does not exist");
+    }
+    // Call the endpoint
+    http::Response res{ m_endpoint_manager.get_endpoint_func(method, path)(request) };
 
-	close(client_socket_fd);
+    // write the response
+    std::string str{ res.to_string() };
+    write_response(client_socket_fd, str);
+
+    close(client_socket_fd);
 }
 
 void Server::start_listening() {
     // start listening and limit the number of connections
     if (listen(m_server_socket_fd, m_connection_backlog) < 0) {
-      std::cerr << "listen failed\n";
-      throw std::runtime_error("Failed to listen on server socket");
+        std::cerr << "listen failed\n";
+        throw std::runtime_error("Failed to listen on server socket");
     }
     std::cout << "Server listening on port " << m_port << std::endl;
-    
+
     // accept incoming connections
     while (true) {
-      struct sockaddr_in m_client_addr;
-      int m_client_addr_len = sizeof(m_client_addr);
-      int client_socket_fd = accept_connection((struct sockaddr *) &m_client_addr, (socklen_t *) &m_client_addr_len);
+        struct sockaddr_in m_client_addr;
+        int m_client_addr_len = sizeof(m_client_addr);
+        int client_socket_fd = accept_connection((struct sockaddr*)&m_client_addr, (socklen_t*)&m_client_addr_len);
 
-    std::function<void()> f = std::bind(&Server::request_handler, std::cref(*this), client_socket_fd);
+        std::function<void()> f = std::bind(&Server::request_handler, std::cref(*this), client_socket_fd);
         m_thread_pool.submit(f);
     }
-
 }
 
-void Server::register_endpoint(
-    const std::string_view path, const std::string_view method, std::function<void()> callback
-) {
+void Server::register_endpoint(const std::string_view method, const std::string path,
+                               std::function<http::Response(const http::Request&)> callback) {
     http::MethodsHelper::Method method_enum = http::MethodsHelper::str_to_method(method);
-    m_endpoint_manager.add_endpoint(path, method_enum, callback);
+    m_endpoint_manager.add_endpoint(method_enum, path, callback);
 }
 
 Server::~Server() {

@@ -2,24 +2,24 @@
 #define THREAD_POOL_HPP
 
 #include "threadsafe_queue.hpp"
+#include <atomic>
+#include <cassert>
+#include <functional>
 #include <thread>
 #include <vector>
-#include <atomic>
-#include <functional>
-#include <cassert>
 
 // clean up the threads before the object is destroyed
 class join_threads {
     private:
         std::vector<std::thread>& worker_threads;
+
     public:
         explicit join_threads(std::vector<std::thread>& threads_)
-        : worker_threads{threads_}
-        {}
-    
+            : worker_threads{threads_} {}
+
         // join all worker_threads before the object is destroyed
         ~join_threads() {
-            for (auto &thread: worker_threads) {
+            for (auto& thread : worker_threads) {
                 if (thread.joinable()) {
                     thread.join();
                 }
@@ -49,33 +49,30 @@ class thread_pool {
                 }
             }
         }
+
     public:
         thread_pool()
-        : is_pool_active{true},
-         joiner{worker_threads}
-        {
-            unsigned const thread_count = std::thread::hardware_concurrency() - 6;  //magic num to delete
+            : is_pool_active{true}
+            , joiner{worker_threads} {
+            unsigned const thread_count = std::thread::hardware_concurrency() - 6; // magic num to delete
             assert(thread_count > 0 && "Hardware concurrency is not detected!");
             // initialize the worker threads
             try {
                 for (unsigned i = 0; i < thread_count; ++i) {
                     worker_threads.emplace_back(std::thread(&thread_pool::worker_thread, this));
                 }
-            } catch(...) {
+            } catch (...) {
                 is_pool_active = false;
                 throw;
             }
         }
 
-        ~thread_pool() {
-            is_pool_active = false;
-        }
+        ~thread_pool() { is_pool_active = false; }
 
-        template<typename FunctionType>
+        template <typename FunctionType>
         void submit(FunctionType f) {
             work_queue.push(std::function<void()>(f));
         }
-};      
+};
 
 #endif // THREAD_POOL_HPP
-

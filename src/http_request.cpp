@@ -1,27 +1,26 @@
 #include "http_request.hpp"
 #include "http_methods_helper.hpp"
-#include <string>
-#include <sstream>
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <unordered_set>
 
 namespace http {
 
-Request::Request(const std::string& raw_request) 
-    : m_raw_request{raw_request} 
-    {
-        parse();
-    };
+Request::Request(const std::string& raw_request)
+    : m_raw_request {raw_request} {
+    parse();
+};
 
 const http::MethodsHelper::Method Request::get_method() const noexcept { return m_method; };
 const std::string& Request::get_method_str() const noexcept { return m_method_str; };
 const std::string& Request::get_path() const noexcept { return m_path; };
-const std::string& Request::get_http_version() const noexcept {return m_http_version; };
+const std::string& Request::get_http_version() const noexcept { return m_http_version; };
 const std::unordered_map<std::string, std::string>& Request::get_headers() const noexcept { return m_headers; };
-const std::string& Request::get_body() const noexcept { return m_body; };    
+const std::string& Request::get_body() const noexcept { return m_body; };
 
 void Request::parse() {
-    std::istringstream iss{m_raw_request};
+    std::istringstream iss {m_raw_request};
     if (!iss) {
         std::cerr << "Failed to create string stream from the raw request" << std::endl;
         throw std::runtime_error("Failed to create string stream from the raw request");
@@ -33,7 +32,7 @@ void Request::parse() {
     if (std::getline(iss, line)) {
         std::istringstream first_line_iss {line};
         first_line_iss >> m_method_str >> m_path >> m_http_version;
-        m_method = { http::MethodsHelper::str_to_method(m_method_str) };
+        m_method = {http::MethodsHelper::str_to_method(m_method_str)};
     } else {
         std::cerr << "Error parsing the first line of the request" << std::endl;
         throw std::runtime_error("Error parsing the first line of the request");
@@ -62,15 +61,15 @@ void Request::parse() {
             if (!std::getline(iss, m_body, '\0')) {
                 std::cerr << "Error parsing the body of the request" << std::endl;
                 throw std::runtime_error("Error parsing the body of the request");
-            } 
+            }
         }
     }
 }
 
-std::string Request::to_string() {
-    auto http_version { get_http_version() };
-    auto method_str { get_method_str() };
-    auto path { get_path() };
+std::string Request::to_string() const {
+    auto http_version {get_http_version()};
+    auto method_str {get_method_str()};
+    auto path {get_path()};
 
     if (method_str.empty() || path.empty() || http_version.empty()) {
         std::cerr << "Request is missing required fields" << std::endl;
@@ -89,9 +88,3 @@ std::string Request::to_string() {
 }
 
 } // namespace http
-
-
-
-
-
-
