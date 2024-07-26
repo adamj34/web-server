@@ -45,6 +45,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/addar/web-server/build/_deps/catch2-build/cmake_install.cmake")
+  include("/home/addar/web-server/build/_deps/spdlog-build/cmake_install.cmake")
 
 endif()
 

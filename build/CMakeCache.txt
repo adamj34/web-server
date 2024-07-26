@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Builds the googlemock subproject
+BUILD_GMOCK:BOOL=ON
+
+//Build shared libraries
+BUILD_SHARED_LIBS:BOOL=ON
+
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
 
@@ -442,6 +448,54 @@ COVERAGE_COMMAND:FILEPATH=/usr/bin/gcov
 //Extra command line flags to pass to the coverage tool
 COVERAGE_EXTRA_FLAGS:STRING=-l
 
+//Enable to build Debian packages
+CPACK_BINARY_DEB:BOOL=OFF
+
+//Enable to build FreeBSD packages
+CPACK_BINARY_FREEBSD:BOOL=OFF
+
+//Enable to build IFW packages
+CPACK_BINARY_IFW:BOOL=OFF
+
+//Enable to build NSIS packages
+CPACK_BINARY_NSIS:BOOL=OFF
+
+//Enable to build RPM packages
+CPACK_BINARY_RPM:BOOL=OFF
+
+//Enable to build STGZ packages
+CPACK_BINARY_STGZ:BOOL=ON
+
+//Enable to build TBZ2 packages
+CPACK_BINARY_TBZ2:BOOL=OFF
+
+//Enable to build TGZ packages
+CPACK_BINARY_TGZ:BOOL=ON
+
+//Enable to build TXZ packages
+CPACK_BINARY_TXZ:BOOL=OFF
+
+//Enable to build TZ packages
+CPACK_BINARY_TZ:BOOL=ON
+
+//Enable to build RPM source packages
+CPACK_SOURCE_RPM:BOOL=OFF
+
+//Enable to build TBZ2 source packages
+CPACK_SOURCE_TBZ2:BOOL=ON
+
+//Enable to build TGZ source packages
+CPACK_SOURCE_TGZ:BOOL=ON
+
+//Enable to build TXZ source packages
+CPACK_SOURCE_TXZ:BOOL=ON
+
+//Enable to build TZ source packages
+CPACK_SOURCE_TZ:BOOL=ON
+
+//Enable to build ZIP source packages
+CPACK_SOURCE_ZIP:BOOL=OFF
+
 //How many times to retry timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_COUNT:STRING=3
 
@@ -477,17 +531,49 @@ FETCHCONTENT_QUIET:BOOL=ON
 // for Catch2
 FETCHCONTENT_SOURCE_DIR_CATCH2:PATH=
 
+//When not empty, overrides where to find pre-populated content
+// for glog
+FETCHCONTENT_SOURCE_DIR_GLOG:PATH=
+
+//When not empty, overrides where to find pre-populated content
+// for GTest
+FETCHCONTENT_SOURCE_DIR_GTEST:PATH=
+
+//When not empty, overrides where to find pre-populated content
+// for spdlog
+FETCHCONTENT_SOURCE_DIR_SPDLOG:PATH=
+
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of Catch2
 FETCHCONTENT_UPDATES_DISCONNECTED_CATCH2:BOOL=OFF
 
+//Enables UPDATE_DISCONNECTED behavior just for population of glog
+FETCHCONTENT_UPDATES_DISCONNECTED_GLOG:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of GTest
+FETCHCONTENT_UPDATES_DISCONNECTED_GTEST:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of spdlog
+FETCHCONTENT_UPDATES_DISCONNECTED_SPDLOG:BOOL=OFF
+
 //Path to a program.
 GITCOMMAND:FILEPATH=/usr/bin/git
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
+//Use Abseil and RE2. Requires Abseil and RE2 to be separately
+// added to the build.
+GTEST_HAS_ABSL:BOOL=OFF
+
+//The directory containing a CMake configuration file for GTest.
+GTest_DIR:PATH=GTest_DIR-NOTFOUND
+
+//Enable installation of googletest. (Projects embedding googletest
+// may want to turn this OFF.)
+INSTALL_GTEST:BOOL=ON
 
 //Command to build the project
 MAKECOMMAND:STRING=/home/addar/.local/lib/python3.11/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
@@ -498,8 +584,196 @@ MEMORYCHECK_COMMAND:FILEPATH=/usr/bin/valgrind
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
+//<ucontext.h> ucontext_t PC member
+PC_FROM_UCONTEXT:STRING=uc_mcontext.gregs[REG_RIP]
+
+//Print file offsets in traces instead of symbolizing
+PRINT_UNSYMBOLIZED_STACK_TRACES:BOOL=OFF
+
 //Name of the computer/site where compile is being run
 SITE:STRING=DESKTOP-PQ2EOLP
+
+//Build all artifacts
+SPDLOG_BUILD_ALL:BOOL=OFF
+
+//Build benchmarks (Requires https://github.com/google/benchmark.git
+// to be installed)
+SPDLOG_BUILD_BENCH:BOOL=OFF
+
+//Build example
+SPDLOG_BUILD_EXAMPLE:BOOL=OFF
+
+//Build header only example
+SPDLOG_BUILD_EXAMPLE_HO:BOOL=OFF
+
+//Build position independent code (-fPIC)
+SPDLOG_BUILD_PIC:BOOL=OFF
+
+//Build shared library
+SPDLOG_BUILD_SHARED:BOOL=OFF
+
+//Build tests
+SPDLOG_BUILD_TESTS:BOOL=OFF
+
+//Build tests using the header only version
+SPDLOG_BUILD_TESTS_HO:BOOL=OFF
+
+//Enable compiler warnings
+SPDLOG_BUILD_WARNINGS:BOOL=OFF
+
+//Use CLOCK_REALTIME_COARSE instead of the regular clock,
+SPDLOG_CLOCK_COARSE:BOOL=OFF
+
+//Disable default logger creation
+SPDLOG_DISABLE_DEFAULT_LOGGER:BOOL=OFF
+
+//Build static or shared library using precompiled header to speed
+// up compilation time
+SPDLOG_ENABLE_PCH:BOOL=OFF
+
+//Use external fmt library instead of bundled
+SPDLOG_FMT_EXTERNAL:BOOL=OFF
+
+//Use external fmt header-only library instead of bundled
+SPDLOG_FMT_EXTERNAL_HO:BOOL=OFF
+
+//Generate the install target
+SPDLOG_INSTALL:BOOL=OFF
+
+//prevent spdlog from using of std::atomic log levels (use only
+// if your code never modifies log levels concurrently
+SPDLOG_NO_ATOMIC_LEVELS:BOOL=OFF
+
+//Compile with -fno-exceptions. Call abort() on any spdlog exceptions
+SPDLOG_NO_EXCEPTIONS:BOOL=OFF
+
+//prevent spdlog from querying the thread id on each log call if
+// thread id is not needed
+SPDLOG_NO_THREAD_ID:BOOL=OFF
+
+//prevent spdlog from using thread local storage
+SPDLOG_NO_TLS:BOOL=OFF
+
+//Prevent from child processes to inherit log file descriptors
+SPDLOG_PREVENT_CHILD_FD:BOOL=OFF
+
+//Enable address sanitizer in tests
+SPDLOG_SANITIZE_ADDRESS:BOOL=OFF
+
+//Include as system headers (skip for clang-tidy).
+SPDLOG_SYSTEM_INCLUDES:BOOL=OFF
+
+//run clang-tidy
+SPDLOG_TIDY:BOOL=OFF
+
+//Use std::format instead of fmt library.
+SPDLOG_USE_STD_FORMAT:BOOL=OFF
+
+//non supported option
+SPDLOG_WCHAR_FILENAMES:BOOL=OFF
+
+//non supported option
+SPDLOG_WCHAR_SUPPORT:BOOL=OFF
+
+//unwind include directory
+Unwind_INCLUDE_DIR:PATH=/usr/include/x86_64-linux-gnu
+
+//unwind library
+Unwind_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libunwind.so
+
+//Fuzzing engine
+WITH_FUZZING:STRING=none
+
+//Use gflags
+WITH_GFLAGS:BOOL=ON
+
+//Use Google Mock
+WITH_GMOCK:BOOL=ON
+
+//Use Google Test
+WITH_GTEST:BOOL=ON
+
+//Enable pkg-config support
+WITH_PKGCONFIG:BOOL=OFF
+
+//Enable symbolize module
+WITH_SYMBOLIZE:BOOL=ON
+
+//Enable Thread Local Storage (TLS) support
+WITH_TLS:BOOL=ON
+
+//unwind driver
+WITH_UNWIND:STRING=libunwind
+
+//The directory containing a CMake configuration file for gflags.
+gflags_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/gflags
+
+//Value Computed by CMake
+glog_BINARY_DIR:STATIC=/home/addar/web-server/build/_deps/glog-build
+
+//The directory containing a CMake configuration file for glog.
+glog_DIR:PATH=glog_DIR-NOTFOUND
+
+//Value Computed by CMake
+glog_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+glog_SOURCE_DIR:STATIC=/home/addar/web-server/build/_deps/glog-src
+
+//Value Computed by CMake
+gmock_BINARY_DIR:STATIC=/home/addar/web-server/build/_deps/gtest-build/googlemock
+
+//Value Computed by CMake
+gmock_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gmock_SOURCE_DIR:STATIC=/home/addar/web-server/build/_deps/gtest-src/googlemock
+
+//Build all of Google Mock's own tests.
+gmock_build_tests:BOOL=OFF
+
+//Value Computed by CMake
+googletest-distribution_BINARY_DIR:STATIC=/home/addar/web-server/build/_deps/gtest-build
+
+//Value Computed by CMake
+googletest-distribution_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+googletest-distribution_SOURCE_DIR:STATIC=/home/addar/web-server/build/_deps/gtest-src
+
+//Value Computed by CMake
+gtest_BINARY_DIR:STATIC=/home/addar/web-server/build/_deps/gtest-build/googletest
+
+//Value Computed by CMake
+gtest_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gtest_SOURCE_DIR:STATIC=/home/addar/web-server/build/_deps/gtest-src/googletest
+
+//Build gtest's sample programs.
+gtest_build_samples:BOOL=OFF
+
+//Build all of gtest's own tests.
+gtest_build_tests:BOOL=OFF
+
+//Disable uses of pthreads in gtest.
+gtest_disable_pthreads:BOOL=OFF
+
+//Use shared (DLL) run-time lib even when Google Test is built
+// as static lib.
+gtest_force_shared_crt:BOOL=OFF
+
+//Build gtest with internal symbols hidden in shared libraries.
+gtest_hide_internal_symbols:BOOL=OFF
+
+//Value Computed by CMake
+spdlog_BINARY_DIR:STATIC=/home/addar/web-server/build/_deps/spdlog-build
+
+//Value Computed by CMake
+spdlog_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+spdlog_SOURCE_DIR:STATIC=/home/addar/web-server/build/_deps/spdlog-src
 
 //Value Computed by CMake
 web-server_BINARY_DIR:STATIC=/home/addar/web-server/build
@@ -591,6 +865,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/addar/web-server
@@ -645,7 +921,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -688,10 +964,50 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Compiler support for a deprecated attribute
+COMPILER_HAS_DEPRECATED:INTERNAL=1
+//Test COMPILER_HAS_DEPRECATED_ATTR
+COMPILER_HAS_DEPRECATED_ATTR:INTERNAL=1
+//Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+COMPILER_HAS_HIDDEN_INLINE_VISIBILITY:INTERNAL=1
+//Test COMPILER_HAS_HIDDEN_VISIBILITY
+COMPILER_HAS_HIDDEN_VISIBILITY:INTERNAL=1
 //ADVANCED property for variable: COVERAGE_COMMAND
 COVERAGE_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: COVERAGE_EXTRA_FLAGS
 COVERAGE_EXTRA_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_DEB
+CPACK_BINARY_DEB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_FREEBSD
+CPACK_BINARY_FREEBSD-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_IFW
+CPACK_BINARY_IFW-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_NSIS
+CPACK_BINARY_NSIS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_RPM
+CPACK_BINARY_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_STGZ
+CPACK_BINARY_STGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TBZ2
+CPACK_BINARY_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TGZ
+CPACK_BINARY_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TXZ
+CPACK_BINARY_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TZ
+CPACK_BINARY_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_RPM
+CPACK_SOURCE_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TBZ2
+CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TGZ
+CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TXZ
+CPACK_SOURCE_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TZ
+CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_ZIP
+CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_COUNT
 CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_DELAY
@@ -702,24 +1018,151 @@ Catch2WithMain_GUID_CMAKE:INTERNAL=8bd3552a-2cfb-4a59-ab15-2031b97ada1e
 Catch2_GUID_CMAKE:INTERNAL=8d538cbe-01bf-4a2e-a98a-6c368fdf13d7
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding Unwind
+FIND_PACKAGE_MESSAGE_DETAILS_Unwind:INTERNAL=[/usr/include/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libunwind.so][v1.3.2()]
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//Have symbol UnDecorateSymbolName
+HAVE_DBGHELP:INTERNAL=
+//Have symbol dladdr
+HAVE_DLADDR:INTERNAL=1
+//Have include dlfcn.h
+HAVE_DLFCN_H:INTERNAL=1
+//Have include elf.h
+HAVE_ELF_H:INTERNAL=1
+//Have symbol backtrace
+HAVE_EXECINFO_BACKTRACE:INTERNAL=1
+//Have symbol backtrace_symbols
+HAVE_EXECINFO_BACKTRACE_SYMBOLS:INTERNAL=1
+//Have symbol fcntl
+HAVE_FCNTL:INTERNAL=1
 //Test HAVE_FLAG__ffile_prefix_map__home_addar_web_server_build__deps_catch2_src__
 HAVE_FLAG__ffile_prefix_map__home_addar_web_server_build__deps_catch2_src__:INTERNAL=1
+//Have symbol getprogname
+HAVE_GETPROGNAME:INTERNAL=
+//Have include glob.h
+HAVE_GLOB_H:INTERNAL=1
+//Have symbol gmtime_r
+HAVE_GMTIME_R:INTERNAL=1
+//Result of TRY_COMPILE
+HAVE_HAVE_MODE_T:INTERNAL=TRUE
+//Result of TRY_COMPILE
+HAVE_HAVE_SSIZE_T:INTERNAL=TRUE
+//Have include link.h
+HAVE_LINK_H:INTERNAL=1
+//Have symbol localtime_r
+HAVE_LOCALTIME_R:INTERNAL=1
+//CHECK_TYPE_SIZE: sizeof(mode_t)
+HAVE_MODE_T:INTERNAL=4
+//Test HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_EIP
+HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_EIP:INTERNAL=
+//Test HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_PC
+HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_PC:INTERNAL=
+//Test HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_RIP
+HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_RIP:INTERNAL=1
+//Have symbol posix_fadvise
+HAVE_POSIX_FADVISE:INTERNAL=1
+//Have symbol pread
+HAVE_PREAD:INTERNAL=1
+//Have symbol program_invocation_short_name
+HAVE_PROGRAM_INVOCATION_SHORT_NAME:INTERNAL=1
+//Have include pwd.h
+HAVE_PWD_H:INTERNAL=1
+//Have symbol pwrite
+HAVE_PWRITE:INTERNAL=1
+//Have symbol sigaction
+HAVE_SIGACTION:INTERNAL=1
+//Have symbol sigaltstack
+HAVE_SIGALTSTACK:INTERNAL=1
+//CHECK_TYPE_SIZE: sizeof(ssize_t)
+HAVE_SSIZE_T:INTERNAL=8
+//Have include stddef.h
+HAVE_STDDEF_H:INTERNAL=1
+//Have include stdint.h
+HAVE_STDINT_H:INTERNAL=1
+//Have include syscall.h
+HAVE_SYSCALL_H:INTERNAL=1
+//Have include syslog.h
+HAVE_SYSLOG_H:INTERNAL=1
+//Have include sys/exec_elf.h
+HAVE_SYS_EXEC_ELF_H:INTERNAL=
+//Have include sys/syscall.h
+HAVE_SYS_SYSCALL_H:INTERNAL=1
+//Have include sys/time.h
+HAVE_SYS_TIME_H:INTERNAL=1
+//Have include sys/types.h
+HAVE_SYS_TYPES_H:INTERNAL=1
+//Have include sys/utsname.h
+HAVE_SYS_UTSNAME_H:INTERNAL=1
+//Have include sys/wait.h
+HAVE_SYS_WAIT_H:INTERNAL=1
+//Have include ucontext.h
+HAVE_UCONTEXT_H:INTERNAL=1
+//Have include unistd.h
+HAVE_UNISTD_H:INTERNAL=1
+//Have symbol unw_getcontext
+HAVE_UNW_GETCONTEXT:INTERNAL=1
+//Have symbol unw_get_reg
+HAVE_UNW_GET_REG:INTERNAL=1
+//Have symbol unw_init_local
+HAVE_UNW_INIT_LOCAL:INTERNAL=1
+//Have symbol unw_step
+HAVE_UNW_STEP:INTERNAL=1
+//Have symbol _chsize_s
+HAVE__CHSIZE_S:INTERNAL=
+//Have symbol _Unwind_Backtrace
+HAVE__UNWIND_BACKTRACE:INTERNAL=1
+//Have symbol _Unwind_GetIP
+HAVE__UNWIND_GETIP:INTERNAL=1
+//Have symbol __argv
+HAVE___ARGV:INTERNAL=
+//Have symbol abi::__cxa_demangle
+HAVE___CXA_DEMANGLE:INTERNAL=1
+//Test HAVE___PROGNAME
+HAVE___PROGNAME:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PC_FROM_UCONTEXT
+PC_FROM_UCONTEXT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Unwind_INCLUDE_DIR
+Unwind_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Unwind_LIBRARY
+Unwind_LIBRARY-ADVANCED:INTERNAL=1
+//STRINGS property for variable: WITH_FUZZING
+WITH_FUZZING-STRINGS:INTERNAL=none;libfuzzer;ossfuzz
+//STRINGS property for variable: WITH_UNWIND
+WITH_UNWIND-STRINGS:INTERNAL=none;unwind;libunwind
 //Catch2 full path to CatchAddTests.cmake helper file
 _CATCH_DISCOVER_TESTS_SCRIPT:INTERNAL=/home/addar/web-server/build/_deps/catch2-src/extras/CatchAddTests.cmake
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+cmake_package_name:INTERNAL=GTest
+generated_dir:INTERNAL=/home/addar/web-server/build/_deps/gtest-build/googletest/generated
+//gflags namespace
+gflags_NAMESPACE:INTERNAL=gflags
+//ADVANCED property for variable: gmock_build_tests
+gmock_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_samples
+gtest_build_samples-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_tests
+gtest_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_disable_pthreads
+gtest_disable_pthreads-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_force_shared_crt
+gtest_force_shared_crt-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_hide_internal_symbols
+gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
+targets_export_name:INTERNAL=GTestTargets
 
