@@ -2,10 +2,9 @@
 #define SERVER_HPP
 
 #include "endpoint_manager.hpp"
-#include "thread_pool.hpp"
+#include "concurrency_model/thread_pool.hpp"
 #include <netinet/in.h>
 #include <string>
-#include <string_view>
 #include <unordered_set>
 #include <vector>
 
@@ -13,13 +12,13 @@ namespace http {
 
 class Server {
     private:
-        thread_pool m_thread_pool;
-        const std::string m_ip_address;
-        int m_server_socket_fd;
-        const int m_port;
-        struct sockaddr_in m_server_addr;
-        int m_connection_backlog;
-        endpoint_manager m_endpoint_manager;
+        thread_pool m_thread_pool{};
+        const std::string m_ip_address{};
+        int m_server_socket_fd{};
+        const int m_port{};
+        struct sockaddr_in m_server_addr {};
+        int m_connection_backlog{};
+        endpoint_manager m_endpoint_manager{};
 
         void start_server();
         int accept_connection(struct sockaddr* m_client_addr, socklen_t* m_client_addr_len) const;

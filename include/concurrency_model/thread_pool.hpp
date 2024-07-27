@@ -54,7 +54,7 @@ class thread_pool {
         thread_pool()
             : is_pool_active{true}
             , joiner{worker_threads} {
-            unsigned const thread_count = std::thread::hardware_concurrency() - 6; // magic num to delete
+            unsigned const thread_count = std::thread::hardware_concurrency(); // magic num to delete
             assert(thread_count > 0 && "Hardware concurrency is not detected!");
             // initialize the worker threads
             try {

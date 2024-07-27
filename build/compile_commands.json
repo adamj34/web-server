@@ -31,6 +31,12 @@
 },
 {
   "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/file_handler.cpp.o -c /home/addar/web-server/src/file_handler.cpp",
+  "file": "/home/addar/web-server/src/file_handler.cpp",
+  "output": "CMakeFiles/web-server.dir/src/file_handler.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
   "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/tests.dir/src/http_server.cpp.o -c /home/addar/web-server/src/http_server.cpp",
   "file": "/home/addar/web-server/src/http_server.cpp",
   "output": "CMakeFiles/tests.dir/src/http_server.cpp.o"
@@ -55,6 +61,12 @@
 },
 {
   "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/tests.dir/src/file_handler.cpp.o -c /home/addar/web-server/src/file_handler.cpp",
+  "file": "/home/addar/web-server/src/file_handler.cpp",
+  "output": "CMakeFiles/tests.dir/src/file_handler.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
   "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/tests.dir/tests/http_request_test.cpp.o -c /home/addar/web-server/tests/http_request_test.cpp",
   "file": "/home/addar/web-server/tests/http_request_test.cpp",
   "output": "CMakeFiles/tests.dir/tests/http_request_test.cpp.o"
@@ -76,6 +88,12 @@
   "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/tests.dir/tests/endpoint_manager_test.cpp.o -c /home/addar/web-server/tests/endpoint_manager_test.cpp",
   "file": "/home/addar/web-server/tests/endpoint_manager_test.cpp",
   "output": "CMakeFiles/tests.dir/tests/endpoint_manager_test.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/tests.dir/tests/file_handler_test.cpp.o -c /home/addar/web-server/tests/file_handler_test.cpp",
+  "file": "/home/addar/web-server/tests/file_handler_test.cpp",
+  "output": "CMakeFiles/tests.dir/tests/file_handler_test.cpp.o"
 },
 {
   "directory": "/home/addar/web-server/build",

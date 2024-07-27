@@ -89,6 +89,14 @@ build CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o: CXX_COMPILER__web-se
   OBJECT_DIR = CMakeFiles/web-server.dir
   OBJECT_FILE_DIR = CMakeFiles/web-server.dir/src
 
+build CMakeFiles/web-server.dir/src/file_handler.cpp.o: CXX_COMPILER__web-server_unscanned_Debug /home/addar/web-server/src/file_handler.cpp || cmake_object_order_depends_target_web-server
+  DEFINES = -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB
+  DEP_FILE = CMakeFiles/web-server.dir/src/file_handler.cpp.o.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include
+  OBJECT_DIR = CMakeFiles/web-server.dir
+  OBJECT_FILE_DIR = CMakeFiles/web-server.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target web-server
@@ -97,7 +105,7 @@ build CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o: CXX_COMPILER__web-se
 #############################################
 # Link the executable web-server
 
-build web-server: CXX_EXECUTABLE_LINKER__web-server_Debug CMakeFiles/web-server.dir/main.cpp.o CMakeFiles/web-server.dir/src/http_server.cpp.o CMakeFiles/web-server.dir/src/http_request.cpp.o CMakeFiles/web-server.dir/src/http_response.cpp.o CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o | _deps/spdlog-build/libspdlogd.so.1.14.1 || _deps/spdlog-build/libspdlogd.so _deps/spdlog-build/libspdlogd.so
+build web-server: CXX_EXECUTABLE_LINKER__web-server_Debug CMakeFiles/web-server.dir/main.cpp.o CMakeFiles/web-server.dir/src/http_server.cpp.o CMakeFiles/web-server.dir/src/http_request.cpp.o CMakeFiles/web-server.dir/src/http_response.cpp.o CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o CMakeFiles/web-server.dir/src/file_handler.cpp.o | _deps/spdlog-build/libspdlogd.so.1.14.1 || _deps/spdlog-build/libspdlogd.so _deps/spdlog-build/libspdlogd.so
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/addar/web-server/build/_deps/spdlog-build  _deps/spdlog-build/libspdlogd.so.1.14.1
   OBJECT_DIR = CMakeFiles/web-server.dir
@@ -147,6 +155,14 @@ build CMakeFiles/tests.dir/src/endpoint_manager.cpp.o: CXX_COMPILER__tests_unsca
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/src
 
+build CMakeFiles/tests.dir/src/file_handler.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/src/file_handler.cpp || cmake_object_order_depends_target_tests
+  DEFINES = -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB
+  DEP_FILE = CMakeFiles/tests.dir/src/file_handler.cpp.o.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/src
+
 build CMakeFiles/tests.dir/tests/http_request_test.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/tests/http_request_test.cpp || cmake_object_order_depends_target_tests
   DEFINES = -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB
   DEP_FILE = CMakeFiles/tests.dir/tests/http_request_test.cpp.o.d
@@ -179,6 +195,14 @@ build CMakeFiles/tests.dir/tests/endpoint_manager_test.cpp.o: CXX_COMPILER__test
   OBJECT_DIR = CMakeFiles/tests.dir
   OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
 
+build CMakeFiles/tests.dir/tests/file_handler_test.cpp.o: CXX_COMPILER__tests_unscanned_Debug /home/addar/web-server/tests/file_handler_test.cpp || cmake_object_order_depends_target_tests
+  DEFINES = -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB
+  DEP_FILE = CMakeFiles/tests.dir/tests/file_handler_test.cpp.o.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/catch2-src/src/catch2/.. -I/home/addar/web-server/build/_deps/catch2-build/generated-includes -I/home/addar/web-server/build/_deps/spdlog-src/include
+  OBJECT_DIR = CMakeFiles/tests.dir
+  OBJECT_FILE_DIR = CMakeFiles/tests.dir/tests
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tests
@@ -187,7 +211,7 @@ build CMakeFiles/tests.dir/tests/endpoint_manager_test.cpp.o: CXX_COMPILER__test
 #############################################
 # Link the executable tests
 
-build tests tests_tests-b12d07c.cmake | ${cmake_ninja_workdir}tests_tests-b12d07c.cmake: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/src/http_server.cpp.o CMakeFiles/tests.dir/src/http_request.cpp.o CMakeFiles/tests.dir/src/http_response.cpp.o CMakeFiles/tests.dir/src/endpoint_manager.cpp.o CMakeFiles/tests.dir/tests/http_request_test.cpp.o CMakeFiles/tests.dir/tests/http_response_test.cpp.o CMakeFiles/tests.dir/tests/http_server_test.cpp.o CMakeFiles/tests.dir/tests/endpoint_manager_test.cpp.o | _deps/catch2-build/src/libCatch2Maind.so.3.4.0 _deps/spdlog-build/libspdlogd.so.1.14.1 _deps/catch2-build/src/libCatch2d.so.3.4.0 || _deps/catch2-build/src/libCatch2Maind.so _deps/catch2-build/src/libCatch2d.so _deps/spdlog-build/libspdlogd.so _deps/catch2-build/src/libCatch2Maind.so _deps/spdlog-build/libspdlogd.so _deps/catch2-build/src/libCatch2d.so
+build tests tests_tests-b12d07c.cmake | ${cmake_ninja_workdir}tests_tests-b12d07c.cmake: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/src/http_server.cpp.o CMakeFiles/tests.dir/src/http_request.cpp.o CMakeFiles/tests.dir/src/http_response.cpp.o CMakeFiles/tests.dir/src/endpoint_manager.cpp.o CMakeFiles/tests.dir/src/file_handler.cpp.o CMakeFiles/tests.dir/tests/http_request_test.cpp.o CMakeFiles/tests.dir/tests/http_response_test.cpp.o CMakeFiles/tests.dir/tests/http_server_test.cpp.o CMakeFiles/tests.dir/tests/endpoint_manager_test.cpp.o CMakeFiles/tests.dir/tests/file_handler_test.cpp.o | _deps/catch2-build/src/libCatch2Maind.so.3.4.0 _deps/spdlog-build/libspdlogd.so.1.14.1 _deps/catch2-build/src/libCatch2d.so.3.4.0 || _deps/catch2-build/src/libCatch2Maind.so _deps/catch2-build/src/libCatch2d.so _deps/spdlog-build/libspdlogd.so _deps/catch2-build/src/libCatch2Maind.so _deps/spdlog-build/libspdlogd.so _deps/catch2-build/src/libCatch2d.so
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/addar/web-server/build/_deps/catch2-build/src:/home/addar/web-server/build/_deps/spdlog-build  _deps/catch2-build/src/libCatch2Maind.so.3.4.0  _deps/spdlog-build/libspdlogd.so.1.14.1  _deps/catch2-build/src/libCatch2d.so.3.4.0
   OBJECT_DIR = CMakeFiles/tests.dir

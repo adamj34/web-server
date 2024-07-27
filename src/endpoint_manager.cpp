@@ -1,5 +1,7 @@
 #include "endpoint_manager.hpp"
 #include "http_request.hpp"
+#include "http_response.hpp"
+#include "utilities/http_methods_helper.hpp"
 
 endpoint_manager::endpoint_manager() {
     for (const auto method : http::MethodsHelper::methods) {

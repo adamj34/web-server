@@ -27,12 +27,32 @@ TEST_CASE("Response set_header") {
     }
 
     SECTION("Update existing header") {
-        http::Response response("HTTP/1.1", "200", "OK", {{"Server", "SimpleHTTPServer"}});
+        http::Response response("HTTP/1.1", "200", "OK", {{"Server", "SimpleHTTPServer"}}, "Body");
         response.set_header("Server", "NewServer");
 
         auto expected = response.get_headers();
-        REQUIRE(expected.size() == 1);
+        REQUIRE(expected.size() == 2);
         REQUIRE(expected["Server"] == "NewServer");
+        REQUIRE(expected["Content-Length"] == "4");
+    }
+}
+
+TEST_CASE("Content-Length header is automatically set") {
+    SECTION("Body is set via setter") {
+        http::Response response("HTTP/1.1", "200", "OK");
+        response.set_body("Hello, World!");
+
+        auto expected = response.get_headers();
+        REQUIRE(expected.size() == 1);
+        REQUIRE(expected["Content-Length"] == "13");
+    }
+
+    SECTION("Body is set via constructor") {
+        http::Response response("HTTP/1.1", "200", "OK", {}, "Hello, World!");
+
+        auto expected = response.get_headers();
+        REQUIRE(expected.size() == 1);
+        REQUIRE(expected["Content-Length"] == "13");
     }
 }
 
@@ -41,6 +61,7 @@ TEST_CASE("Response to_string") {
         http::Response response("HTTP/1.1", "200", "OK", {{"Content-Type", "text/plain"}}, "Hello, World!");
 
         std::string expected = "HTTP/1.1 200 OK\r\n"
+                               "Content-Length: 13\r\n"
                                "Content-Type: text/plain\r\n"
                                "\r\n"
                                "Hello, World!";
@@ -49,7 +70,8 @@ TEST_CASE("Response to_string") {
     }
 
     SECTION("Valid response without body") {
-        http::Response response("HTTP/1.1", "404", "Not Found", {{"Content-Type", "text/plain"}});
+        http::Response response("HTTP/1.1", "404", "Not Found");
+        response.set_header("Content-Type", "text/plain");
 
         std::string expected = "HTTP/1.1 404 Not Found\r\n"
                                "Content-Type: text/plain\r\n"

@@ -1,7 +1,7 @@
 #ifndef ENDPOINT_MANAGER_HPP
 #define ENDPOINT_MANAGER_HPP
 
-#include "http_methods_helper.hpp"
+#include "utilities/http_methods_helper.hpp"
 #include "http_request.hpp"
 #include "http_response.hpp"
 #include <functional>

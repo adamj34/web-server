@@ -13,9 +13,10 @@ target_sources(web-server PRIVATE
     src/http_request.cpp
     src/http_response.cpp
     src/endpoint_manager.cpp
+	src/file_handler.cpp
 )
 
-Include(FetchContent)
+include(FetchContent)
 
 FetchContent_Declare(
   Catch2
@@ -23,21 +24,31 @@ FetchContent_Declare(
   GIT_TAG        v3.4.0 
 )
 
-FetchContent_MakeAvailable(Catch2)
+FetchContent_Declare(
+  spdlog
+  GIT_REPOSITORY https://github.com/gabime/spdlog.git
+  GIT_TAG        v1.14.1
+)
+FetchContent_MakeAvailable(Catch2 spdlog) 
 
 add_executable(tests
-    src/http_server.cpp
-    src/http_request.cpp
-    src/http_response.cpp
-    src/endpoint_manager.cpp
-    tests/http_request_test.cpp
-    tests/http_response_test.cpp
-    tests/http_server_test.cpp
+	src/http_server.cpp
+	src/http_request.cpp
+	src/http_response.cpp
+	src/endpoint_manager.cpp
+	src/file_handler.cpp
+	tests/http_request_test.cpp 
+	tests/http_response_test.cpp
+	tests/http_server_test.cpp
+	tests/endpoint_manager_test.cpp
+	tests/file_handler_test.cpp
 )
-target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain spdlog::spdlog)
+target_link_libraries(web-server PRIVATE spdlog::spdlog)
 
 list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
+
 include(CTest)
 include(Catch)
-enable_testing()
+enable_testing() 
 catch_discover_tests(tests)
