@@ -1,37 +1,37 @@
 [
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/main.cpp.o -c /home/addar/web-server/main.cpp",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server/build/_deps/zlib-src -g -std=gnu++23 -o CMakeFiles/web-server.dir/main.cpp.o -c /home/addar/web-server/main.cpp",
   "file": "/home/addar/web-server/main.cpp",
   "output": "CMakeFiles/web-server.dir/main.cpp.o"
 },
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/http_server.cpp.o -c /home/addar/web-server/src/http_server.cpp",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server/build/_deps/zlib-src -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/http_server.cpp.o -c /home/addar/web-server/src/http_server.cpp",
   "file": "/home/addar/web-server/src/http_server.cpp",
   "output": "CMakeFiles/web-server.dir/src/http_server.cpp.o"
 },
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/http_request.cpp.o -c /home/addar/web-server/src/http_request.cpp",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server/build/_deps/zlib-src -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/http_request.cpp.o -c /home/addar/web-server/src/http_request.cpp",
   "file": "/home/addar/web-server/src/http_request.cpp",
   "output": "CMakeFiles/web-server.dir/src/http_request.cpp.o"
 },
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/http_response.cpp.o -c /home/addar/web-server/src/http_response.cpp",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server/build/_deps/zlib-src -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/http_response.cpp.o -c /home/addar/web-server/src/http_response.cpp",
   "file": "/home/addar/web-server/src/http_response.cpp",
   "output": "CMakeFiles/web-server.dir/src/http_response.cpp.o"
 },
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o -c /home/addar/web-server/src/endpoint_manager.cpp",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server/build/_deps/zlib-src -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o -c /home/addar/web-server/src/endpoint_manager.cpp",
   "file": "/home/addar/web-server/src/endpoint_manager.cpp",
   "output": "CMakeFiles/web-server.dir/src/endpoint_manager.cpp.o"
 },
 {
   "directory": "/home/addar/web-server/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/file_handler.cpp.o -c /home/addar/web-server/src/file_handler.cpp",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server/build/_deps/zlib-src -g -std=gnu++23 -o CMakeFiles/web-server.dir/src/file_handler.cpp.o -c /home/addar/web-server/src/file_handler.cpp",
   "file": "/home/addar/web-server/src/file_handler.cpp",
   "output": "CMakeFiles/web-server.dir/src/file_handler.cpp.o"
 },
@@ -760,5 +760,209 @@
   "command": "/usr/bin/c++ -DFMT_LIB_EXPORT -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/spdlog-src/include -g -std=c++23 -fPIC -o _deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o -c /home/addar/web-server/build/_deps/spdlog-src/src/bundled_fmtlib_format.cpp",
   "file": "/home/addar/web-server/build/_deps/spdlog-src/src/bundled_fmtlib_format.cpp",
   "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/adler32.c.o -c /home/addar/web-server/build/_deps/zlib-src/adler32.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/adler32.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/adler32.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/compress.c.o -c /home/addar/web-server/build/_deps/zlib-src/compress.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/compress.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/compress.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/crc32.c.o -c /home/addar/web-server/build/_deps/zlib-src/crc32.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/crc32.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/crc32.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/deflate.c.o -c /home/addar/web-server/build/_deps/zlib-src/deflate.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/deflate.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/deflate.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/gzclose.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzclose.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzclose.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/gzclose.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/gzlib.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzlib.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzlib.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/gzlib.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/gzread.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzread.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzread.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/gzread.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/gzwrite.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzwrite.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzwrite.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/gzwrite.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/inflate.c.o -c /home/addar/web-server/build/_deps/zlib-src/inflate.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/inflate.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/inflate.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/infback.c.o -c /home/addar/web-server/build/_deps/zlib-src/infback.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/infback.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/infback.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/inftrees.c.o -c /home/addar/web-server/build/_deps/zlib-src/inftrees.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/inftrees.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/inftrees.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/inffast.c.o -c /home/addar/web-server/build/_deps/zlib-src/inffast.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/inffast.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/inffast.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/trees.c.o -c /home/addar/web-server/build/_deps/zlib-src/trees.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/trees.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/trees.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/uncompr.c.o -c /home/addar/web-server/build/_deps/zlib-src/uncompr.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/uncompr.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/uncompr.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -fPIC -o _deps/zlib-build/CMakeFiles/zlib.dir/zutil.c.o -c /home/addar/web-server/build/_deps/zlib-src/zutil.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/zutil.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlib.dir/zutil.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/adler32.c.o -c /home/addar/web-server/build/_deps/zlib-src/adler32.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/adler32.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/adler32.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/compress.c.o -c /home/addar/web-server/build/_deps/zlib-src/compress.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/compress.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/compress.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/crc32.c.o -c /home/addar/web-server/build/_deps/zlib-src/crc32.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/crc32.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/crc32.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/deflate.c.o -c /home/addar/web-server/build/_deps/zlib-src/deflate.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/deflate.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/deflate.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzclose.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzclose.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzclose.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/gzclose.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzlib.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzlib.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzlib.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/gzlib.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzread.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzread.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzread.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/gzread.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzwrite.c.o -c /home/addar/web-server/build/_deps/zlib-src/gzwrite.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/gzwrite.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/gzwrite.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/inflate.c.o -c /home/addar/web-server/build/_deps/zlib-src/inflate.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/inflate.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/inflate.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/infback.c.o -c /home/addar/web-server/build/_deps/zlib-src/infback.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/infback.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/infback.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/inftrees.c.o -c /home/addar/web-server/build/_deps/zlib-src/inftrees.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/inftrees.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/inftrees.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/inffast.c.o -c /home/addar/web-server/build/_deps/zlib-src/inffast.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/inffast.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/inffast.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/trees.c.o -c /home/addar/web-server/build/_deps/zlib-src/trees.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/trees.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/trees.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/uncompr.c.o -c /home/addar/web-server/build/_deps/zlib-src/uncompr.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/uncompr.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/uncompr.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/zlibstatic.dir/zutil.c.o -c /home/addar/web-server/build/_deps/zlib-src/zutil.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/zutil.c",
+  "output": "_deps/zlib-build/CMakeFiles/zlibstatic.dir/zutil.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/example.dir/test/example.c.o -c /home/addar/web-server/build/_deps/zlib-src/test/example.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/test/example.c",
+  "output": "_deps/zlib-build/CMakeFiles/example.dir/test/example.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -o _deps/zlib-build/CMakeFiles/minigzip.dir/test/minigzip.c.o -c /home/addar/web-server/build/_deps/zlib-src/test/minigzip.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/test/minigzip.c",
+  "output": "_deps/zlib-build/CMakeFiles/minigzip.dir/test/minigzip.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -D_FILE_OFFSET_BITS=64 -o _deps/zlib-build/CMakeFiles/example64.dir/test/example.c.o -c /home/addar/web-server/build/_deps/zlib-src/test/example.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/test/example.c",
+  "output": "_deps/zlib-build/CMakeFiles/example64.dir/test/example.c.o"
+},
+{
+  "directory": "/home/addar/web-server/build",
+  "command": "/usr/bin/cc -D_LARGEFILE64_SOURCE=1 -I/home/addar/web-server/include -I/home/addar/web-server/build/_deps/zlib-build -I/home/addar/web-server -I/home/addar/web-server/build/_deps/zlib-src -g -D_FILE_OFFSET_BITS=64 -o _deps/zlib-build/CMakeFiles/minigzip64.dir/test/minigzip.c.o -c /home/addar/web-server/build/_deps/zlib-src/test/minigzip.c",
+  "file": "/home/addar/web-server/build/_deps/zlib-src/test/minigzip.c",
+  "output": "_deps/zlib-build/CMakeFiles/minigzip64.dir/test/minigzip.c.o"
 }
 ]

@@ -543,6 +543,10 @@ FETCHCONTENT_SOURCE_DIR_GTEST:PATH=
 // for spdlog
 FETCHCONTENT_SOURCE_DIR_SPDLOG:PATH=
 
+//When not empty, overrides where to find pre-populated content
+// for zlib
+FETCHCONTENT_SOURCE_DIR_ZLIB:PATH=
+
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
@@ -558,6 +562,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_GTEST:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of spdlog
 FETCHCONTENT_UPDATES_DISCONNECTED_SPDLOG:BOOL=OFF
 
+//Enables UPDATE_DISCONNECTED behavior just for population of zlib
+FETCHCONTENT_UPDATES_DISCONNECTED_ZLIB:BOOL=OFF
+
 //Path to a program.
 GITCOMMAND:FILEPATH=/usr/bin/git
 
@@ -571,9 +578,24 @@ GTEST_HAS_ABSL:BOOL=OFF
 //The directory containing a CMake configuration file for GTest.
 GTest_DIR:PATH=GTest_DIR-NOTFOUND
 
+//Installation directory for executables
+INSTALL_BIN_DIR:PATH=/usr/local/bin
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
+
+//Installation directory for headers
+INSTALL_INC_DIR:PATH=/usr/local/include
+
+//Installation directory for libraries
+INSTALL_LIB_DIR:PATH=/usr/local/lib
+
+//Installation directory for manual pages
+INSTALL_MAN_DIR:PATH=/usr/local/share/man
+
+//Installation directory for pkgconfig (.pc) files
+INSTALL_PKGCONFIG_DIR:PATH=/usr/local/share/pkgconfig
 
 //Command to build the project
 MAKECOMMAND:STRING=/home/addar/.local/lib/python3.11/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
@@ -705,6 +727,9 @@ WITH_TLS:BOOL=ON
 //unwind driver
 WITH_UNWIND:STRING=libunwind
 
+//Enable Zlib Examples
+ZLIB_BUILD_EXAMPLES:BOOL=ON
+
 //The directory containing a CMake configuration file for gflags.
 gflags_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/gflags
 
@@ -783,6 +808,15 @@ web-server_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 web-server_SOURCE_DIR:STATIC=/home/addar/web-server
+
+//Value Computed by CMake
+zlib_BINARY_DIR:STATIC=/home/addar/web-server/build/_deps/zlib-build
+
+//Value Computed by CMake
+zlib_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+zlib_SOURCE_DIR:STATIC=/home/addar/web-server/build/_deps/zlib-src
 
 
 ########################
@@ -921,7 +955,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1042,6 +1076,8 @@ HAVE_EXECINFO_BACKTRACE_SYMBOLS:INTERNAL=1
 HAVE_FCNTL:INTERNAL=1
 //Test HAVE_FLAG__ffile_prefix_map__home_addar_web_server_build__deps_catch2_src__
 HAVE_FLAG__ffile_prefix_map__home_addar_web_server_build__deps_catch2_src__:INTERNAL=1
+//Have function fseeko
+HAVE_FSEEKO:INTERNAL=1
 //Have symbol getprogname
 HAVE_GETPROGNAME:INTERNAL=
 //Have include glob.h
@@ -1058,6 +1094,8 @@ HAVE_LINK_H:INTERNAL=1
 HAVE_LOCALTIME_R:INTERNAL=1
 //CHECK_TYPE_SIZE: sizeof(mode_t)
 HAVE_MODE_T:INTERNAL=4
+//Result of TRY_COMPILE
+HAVE_OFF64_T:INTERNAL=TRUE
 //Test HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_EIP
 HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_EIP:INTERNAL=
 //Test HAVE_PC_FROM_UCONTEXT_uc_mcontext_gregs_REG_PC
@@ -1130,6 +1168,8 @@ MAKECOMMAND-ADVANCED:INTERNAL=1
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
+//CHECK_TYPE_SIZE: sizeof(off64_t)
+OFF64_T:INTERNAL=8
 //ADVANCED property for variable: PC_FROM_UCONTEXT
 PC_FROM_UCONTEXT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SITE
@@ -1142,6 +1182,8 @@ Unwind_LIBRARY-ADVANCED:INTERNAL=1
 WITH_FUZZING-STRINGS:INTERNAL=none;libfuzzer;ossfuzz
 //STRINGS property for variable: WITH_UNWIND
 WITH_UNWIND-STRINGS:INTERNAL=none;unwind;libunwind
+//Have include unistd.h
+Z_HAVE_UNISTD_H:INTERNAL=1
 //Catch2 full path to CatchAddTests.cmake helper file
 _CATCH_DISCOVER_TESTS_SCRIPT:INTERNAL=/home/addar/web-server/build/_deps/catch2-src/extras/CatchAddTests.cmake
 //linker supports push/pop state

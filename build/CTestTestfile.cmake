@@ -7,3 +7,4 @@
 include("/home/addar/web-server/build/tests_include-b12d07c.cmake")
 subdirs("_deps/catch2-build")
 subdirs("_deps/spdlog-build")
+subdirs("_deps/zlib-build")

@@ -1,9 +1,9 @@
 #include "utilities/file_handler.hpp"
+#include "spdlog/spdlog.h"
 #include <fstream>
 #include <stdexcept>
 #include <sstream>
 #include <filesystem>
-#include "spdlog/spdlog.h"
 #include <iostream>
 
 

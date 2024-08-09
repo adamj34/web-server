@@ -1979,3 +1979,83 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/addar/.local/lib/python3.11/site-packages/cmake/data/share/cmake-3.26/Modules/CheckTypeSize.cmake:148 (try_compile)"
+      - "/home/addar/.local/lib/python3.11/site-packages/cmake/data/share/cmake-3.26/Modules/CheckTypeSize.cmake:273 (__check_type_size_impl)"
+      - "build/_deps/zlib-src/CMakeLists.txt:42 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "/home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-jQmDMF"
+      binary: "/home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-jQmDMF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/addar/web-server/build/_deps/catch2-src/extras"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: /home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-jQmDMF
+        
+        Run Build Command(s):/usr/bin/ninja -v cmTC_6fb02 && [1/2] /usr/bin/cc -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_TYPES_H -D_LARGEFILE64_SOURCE=1   -o CMakeFiles/cmTC_6fb02.dir/OFF64_T.c.o -c /home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-jQmDMF/OFF64_T.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_6fb02.dir/OFF64_T.c.o -o cmTC_6fb02   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/addar/.local/lib/python3.11/site-packages/cmake/data/share/cmake-3.26/Modules/CheckFunctionExists.cmake:91 (try_compile)"
+      - "build/_deps/zlib-src/CMakeLists.txt:51 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "/home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-8rfe8B"
+      binary: "/home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-8rfe8B"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/addar/web-server/build/_deps/catch2-src/extras"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: /home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-8rfe8B
+        
+        Run Build Command(s):/usr/bin/ninja -v cmTC_d271b && [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=fseeko -o CMakeFiles/cmTC_d271b.dir/CheckFunctionExists.c.o -c /home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-8rfe8B/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=fseeko  CMakeFiles/cmTC_d271b.dir/CheckFunctionExists.c.o -o cmTC_d271b   && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/addar/.local/lib/python3.11/site-packages/cmake/data/share/cmake-3.26/Modules/CheckIncludeFile.cmake:95 (try_compile)"
+      - "build/_deps/zlib-src/CMakeLists.txt:59 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-Bx0nRG"
+      binary: "/home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-Bx0nRG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/addar/web-server/build/_deps/catch2-src/extras"
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: /home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-Bx0nRG
+        
+        Run Build Command(s):/usr/bin/ninja -v cmTC_49a56 && [1/2] /usr/bin/cc    -o CMakeFiles/cmTC_49a56.dir/CheckIncludeFile.c.o -c /home/addar/web-server/build/CMakeFiles/CMakeScratch/TryCompile-Bx0nRG/CheckIncludeFile.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_49a56.dir/CheckIncludeFile.c.o -o cmTC_49a56   && :
+        
+      exitCode: 0
+...

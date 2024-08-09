@@ -29,7 +29,13 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/gabime/spdlog.git
   GIT_TAG        v1.14.1
 )
-FetchContent_MakeAvailable(Catch2 spdlog) 
+
+FetchContent_Declare(
+	zlib
+	GIT_REPOSITORY https://github.com/madler/zlib.git
+	GIT_TAG        v1.3.1
+)
+FetchContent_MakeAvailable(Catch2 spdlog zlib) 
 
 add_executable(tests
 	src/http_server.cpp
@@ -44,7 +50,7 @@ add_executable(tests
 	tests/file_handler_test.cpp
 )
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain spdlog::spdlog)
-target_link_libraries(web-server PRIVATE spdlog::spdlog)
+target_link_libraries(web-server PRIVATE spdlog::spdlog zlib)
 
 list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 
