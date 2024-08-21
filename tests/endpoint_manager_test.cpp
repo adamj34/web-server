@@ -3,9 +3,7 @@
 #include "http_response.hpp"
 #include <catch2/catch_test_macros.hpp>
 
-
 TEST_CASE("Endpoint manager add endpoint") {
-    
 
     SECTION("Add endpoint with GET method") {
         endpoint_manager manager;

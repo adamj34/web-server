@@ -8,7 +8,7 @@
 
 std::string FileHandler::send_file(std::string_view file_path, std::string base_path) {
     if (base_path.empty() ) {
-        base_path =    std::filesystem::current_path() ;
+        base_path =   std::filesystem::current_path() ;
     }
 
     // Remove leading slash if present

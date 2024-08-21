@@ -2,7 +2,6 @@
 #include <catch2/catch_test_macros.hpp>
 #include <iostream>
 
-
 TEST_CASE("Response set_header") {
 
     SECTION("Add new header") {
@@ -16,9 +15,7 @@ TEST_CASE("Response set_header") {
 
     SECTION("Add multiple headers") {
         http::Response response("HTTP/1.1", "200", "OK");
-        response
-            .set_header("Server", "SimpleHTTPServer")
-            .set_header("Connection", "close");
+        response.set_header("Server", "SimpleHTTPServer").set_header("Connection", "close");
 
         auto expected = response.get_headers();
         REQUIRE(expected.size() == 2);
@@ -27,7 +24,7 @@ TEST_CASE("Response set_header") {
     }
 
     SECTION("Update existing header") {
-        http::Response response("HTTP/1.1", "200", "OK", {{"Server", "SimpleHTTPServer"}}, "Body");
+        http::Response response("HTTP/1.1", "200", "OK", { { "Server", "SimpleHTTPServer" } }, "Body");
         response.set_header("Server", "NewServer");
 
         auto expected = response.get_headers();
@@ -58,7 +55,7 @@ TEST_CASE("Content-Length header is automatically set") {
 
 TEST_CASE("Response to_string") {
     SECTION("Valid response with body") {
-        http::Response response("HTTP/1.1", "200", "OK", {{"Content-Type", "text/plain"}}, "Hello, World!");
+        http::Response response("HTTP/1.1", "200", "OK", { { "Content-Type", "text/plain" } }, "Hello, World!");
 
         std::string expected = "HTTP/1.1 200 OK\r\n"
                                "Content-Length: 13\r\n"
@@ -86,5 +83,3 @@ TEST_CASE("Response to_string") {
         REQUIRE_THROWS_AS(response.to_string(), std::runtime_error);
     }
 }
-
-

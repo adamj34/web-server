@@ -23,8 +23,13 @@ jobs:
     - name: Install clang-format
       run: sudo apt-get install -y clang-format
 
-    - name: Format code with clang-format
-      run: clang-format -i ${{github.workspace}}/src/*.cpp ${{github.workspace}}/include/**/*.hpp
+    - name: Check code formatting
+      run: |
+        clang-format -i ${{github.workspace}}/src/*.cpp ${{github.workspace}}/include/**/*.hpp ${{github.workspace}}/test/*.cpp
+        if ! git diff --quiet; then
+          echo "Code is not formatted. Please run clang-format before committing."
+          exit 1
+        fi
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
