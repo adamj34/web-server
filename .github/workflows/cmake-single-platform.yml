@@ -25,7 +25,7 @@ jobs:
 
     - name: Check code formatting
       run: |
-        clang-format -i ${{github.workspace}}/src/*.cpp ${{github.workspace}}/include/**/*.hpp ${{github.workspace}}/test/*.cpp
+        clang-format -i ${{github.workspace}}/src/*.cpp ${{github.workspace}}/include/**/*.hpp ${{github.workspace}}/tests/*.cpp
         if ! git diff --quiet; then
           echo "Code is not formatted. Please run clang-format before committing."
           exit 1
