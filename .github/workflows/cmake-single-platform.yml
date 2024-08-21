@@ -24,7 +24,7 @@ jobs:
       run: sudo apt-get install -y clang-format
 
     - name: Format code with clang-format
-      run: clang-format -i ${{github.workspace}}/src/**/*.cpp ${{github.workspace}}/include/**/*.hpp
+      run: clang-format -i ${{github.workspace}}/src/*.cpp ${{github.workspace}}/include/**/*.hpp
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
