@@ -8,7 +8,7 @@ namespace http {
 
 class Response {
     private:
-        std::string m_http_version{"HTTP/1.1"};
+        std::string m_http_version{ "HTTP/1.1" };
         std::string m_status{};
         std::string m_message{};
         std::unordered_map<std::string, std::string> m_headers{};

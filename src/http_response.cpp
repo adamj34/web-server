@@ -12,9 +12,9 @@ Response::Response(std::string http_version, std::string status, std::string mes
     , m_message{ std::move(message) }
     , m_headers{ std::move(headers) }
     , m_body{ std::move(body) } {
-        // automatically set the Content-Length header
-        set_header("Content-Length", std::to_string(m_body.size()));
-    }
+    // automatically set the Content-Length header
+    set_header("Content-Length", std::to_string(m_body.size()));
+}
 
 Response::Response(std::string http_version, std::string status, std::string message)
     : m_http_version{ std::move(http_version) }
@@ -41,7 +41,7 @@ const void Response::set_message(std::string message) { m_message = std::move(me
 const void Response::set_body(std::string body) {
     m_body = std::move(body);
     // automatically set the Content-Length header
-    set_header("Content-Length", std::to_string(m_body.size())); 
+    set_header("Content-Length", std::to_string(m_body.size()));
 };
 
 const void Response::set_http_version(std::string http_version) { m_http_version = std::move(http_version); };

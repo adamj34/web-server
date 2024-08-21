@@ -1,6 +1,6 @@
 #include "http_request.hpp"
-#include "utilities/http_methods_helper.hpp"
 #include "spdlog/spdlog.h"
+#include "utilities/http_methods_helper.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -9,7 +9,7 @@
 namespace http {
 
 Request::Request(const std::string& raw_request)
-    : m_raw_request {raw_request} {
+    : m_raw_request{ raw_request } {
     parse();
 }
 
@@ -21,19 +21,19 @@ const std::unordered_map<std::string, std::string>& Request::get_headers() const
 const std::string& Request::get_body() const noexcept { return m_body; };
 
 void Request::parse() {
-    std::istringstream iss {m_raw_request};
+    std::istringstream iss{ m_raw_request };
     if (!iss) {
         spdlog::error("Failed to create string stream from the raw request");
         throw std::runtime_error("Failed to create string stream from the raw request");
     }
-    std::string line {};
+    std::string line{};
 
     // Parse the first line of the request based on the HTTP standard
     // eg. "HTTP/1.1 GET /index.html"
     if (std::getline(iss, line)) {
-        std::istringstream first_line_iss {line};
+        std::istringstream first_line_iss{ line };
         first_line_iss >> m_method_str >> m_path >> m_http_version;
-        m_method = {http::MethodsHelper::str_to_method(m_method_str)};
+        m_method = { http::MethodsHelper::str_to_method(m_method_str) };
     } else {
         spdlog::error("Error parsing the first line of the request");
         throw std::runtime_error("Error parsing the first line of the request");
@@ -46,8 +46,8 @@ void Request::parse() {
             line.pop_back();
         }
 
-        std::string header_name {};
-        std::string header_value {};
+        std::string header_name{};
+        std::string header_value{};
         std::size_t colon_pos = line.find(':');
         header_name = line.substr(0, colon_pos);
         header_value = line.substr(colon_pos + 2);
@@ -68,16 +68,16 @@ void Request::parse() {
 }
 
 std::string Request::to_string() const {
-    auto http_version {get_http_version()};
-    auto method_str {get_method_str()};
-    auto path {get_path()};
+    auto http_version{ get_http_version() };
+    auto method_str{ get_method_str() };
+    auto path{ get_path() };
 
     if (method_str.empty() || path.empty() || http_version.empty()) {
         spdlog::error("HTTP version, method, and path must be set");
         throw std::invalid_argument("Request is missing required fields");
     }
 
-    std::ostringstream oss {};
+    std::ostringstream oss{};
     oss << method_str << " " << path << " " << http_version << "\r\n";
     for (const auto& [header_name, header_value] : get_headers()) {
         oss << header_name << ": " << header_value << "\r\n";

@@ -15,7 +15,7 @@ class join_threads {
 
     public:
         explicit join_threads(std::vector<std::thread>& threads_)
-            : worker_threads{threads_} {}
+            : worker_threads{ threads_ } {}
 
         // join all worker_threads before the object is destroyed
         ~join_threads() {
@@ -52,8 +52,8 @@ class thread_pool {
 
     public:
         thread_pool()
-            : is_pool_active{true}
-            , joiner{worker_threads} {
+            : is_pool_active{ true }
+            , joiner{ worker_threads } {
             unsigned const thread_count = std::thread::hardware_concurrency(); // magic num to delete
             assert(thread_count > 0 && "Hardware concurrency is not detected!");
             // initialize the worker threads

@@ -1,0 +1,11 @@
+BreakBeforeBraces: Attach
+IndentWidth: 4
+TabWidth: 4
+IndentAccessModifiers: true
+PointerAlignment: Left
+AlwaysBreakTemplateDeclarations: true
+AlwaysBreakAfterDefinitionReturnType: None
+ColumnLimit: 120
+BreakConstructorInitializers: BeforeComma
+Cpp11BracedListStyle: false
+EmptyLineBeforeAccessModifier: Always

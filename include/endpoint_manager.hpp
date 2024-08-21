@@ -1,9 +1,9 @@
 #ifndef ENDPOINT_MANAGER_HPP
 #define ENDPOINT_MANAGER_HPP
 
-#include "utilities/http_methods_helper.hpp"
 #include "http_request.hpp"
 #include "http_response.hpp"
+#include "utilities/http_methods_helper.hpp"
 #include <functional>
 #include <string>
 #include <unordered_map>

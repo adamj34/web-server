@@ -1,9 +1,10 @@
 #include "http_server.hpp"
+#include "concurrency_model/thread_pool.hpp"
 #include "endpoint_manager.hpp"
-#include "utilities/http_methods_helper.hpp"
 #include "http_request.hpp"
 #include "http_response.hpp"
-#include "concurrency_model/thread_pool.hpp"
+#include "spdlog/spdlog.h"
+#include "utilities/http_methods_helper.hpp"
 #include <arpa/inet.h>
 #include <iostream>
 #include <netdb.h>
@@ -13,7 +14,6 @@
 #include <sys/types.h>
 #include <unordered_set>
 #include <vector>
-#include "spdlog/spdlog.h"
 
 namespace http {
 
@@ -141,8 +141,6 @@ void Server::register_endpoint(const std::string_view method, const std::string 
     m_endpoint_manager.add_endpoint(method_enum, path, callback);
 }
 
-Server::~Server() {
-    close(m_server_socket_fd);
-}
+Server::~Server() { close(m_server_socket_fd); }
 
 } // namespace http

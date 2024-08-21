@@ -18,7 +18,7 @@ class MethodsHelper {
             DELETE,
         };
         using enum Method;
-        static constexpr std::array<Method, 5> methods = {GET, POST, PUT, PATCH, DELETE};
+        static constexpr std::array<Method, 5> methods = { GET, POST, PUT, PATCH, DELETE };
 
         static constexpr std::string_view method_to_str(Method method) {
             switch (method) {

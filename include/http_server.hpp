@@ -1,8 +1,8 @@
 #ifndef SERVER_HPP
 #define SERVER_HPP
 
-#include "endpoint_manager.hpp"
 #include "concurrency_model/thread_pool.hpp"
+#include "endpoint_manager.hpp"
 #include <netinet/in.h>
 #include <string>
 #include <unordered_set>
