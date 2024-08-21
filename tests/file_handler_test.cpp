@@ -20,7 +20,7 @@ TEST_CASE("FileHandler send file - Existing file") {
 
     SECTION("File content is returned correctly with a full path specified") {
         std::string file_path = "test.txt";
-        std::string test_dir_path = "/home/addar/web-server/build";
+        std::string test_dir_path = "./";
         std::string expected_content = "This is a test file.";
         std::ofstream test_file{file_path};
         test_file << expected_content;
