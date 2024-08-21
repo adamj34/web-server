@@ -7,13 +7,13 @@
 #include <stdexcept>
 
 std::string FileHandler::send_file(std::string_view file_path, std::string base_path) {
-    if (base_path.empty() ) {
-        base_path =   std::filesystem::current_path() ;
+    if (base_path.empty()) {
+        base_path = std::filesystem::current_path();
     }
 
     // Remove leading slash if present
-    if (file_path.starts_with("/")) {
-        file_path = file_path.substr(1);
+    if (file_path.starts_with("/")   ) {
+        file_path    = file_path.substr(1);
     }
     auto full_path = std::filesystem::path(base_path) / file_path;
 
