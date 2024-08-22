@@ -17,7 +17,7 @@ class endpoint_manager {
         EndpointContainer m_endpoints;
 
     public:
-        endpoint_manager();
+        endpoint_manager(  )   ;
         void add_endpoint(http::MethodsHelper::Method method, std::string path,
                           std::function<http::Response(const http::Request&)> callback);
         bool endpoint_exists(http::MethodsHelper::Method method, std::string path) const;
