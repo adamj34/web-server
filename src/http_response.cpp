@@ -8,7 +8,7 @@ namespace http {
 Response::Response(std::string http_version, std::string status, std::string message,
                    std::unordered_map<std::string, std::string> headers, std::string body)
     : m_http_version{ std::move(http_version) }
-    ,  m_status{ std::move(status)         }
+    , m_status{ std::move(status) }
     , m_message{ std::move(message) }
     , m_headers{ std::move(headers) }
     , m_body{ std::move(body) } {
