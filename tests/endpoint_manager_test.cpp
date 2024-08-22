@@ -6,7 +6,7 @@
 TEST_CASE("Endpoint manager add endpoint") {
 
     SECTION("Add endpoint with GET method") {
-        endpoint_manager manager;
+        endpoint_manager manager   ;
 
         std::string path = "/api/users";
         http::MethodsHelper::Method method = http::MethodsHelper::Method::GET;
