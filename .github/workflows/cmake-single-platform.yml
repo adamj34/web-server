@@ -1,4 +1,3 @@
-# See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-multi-platform.yml
 name: CMake on a single platform
 
 on:
@@ -8,13 +7,10 @@ on:
     branches: [ "main" ]
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
   build:
-    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
 
     steps:
@@ -23,17 +19,7 @@ jobs:
     - name: Install clang-format
       run: sudo apt-get install -y clang-format
 
-    - name: Check code formatting
-      run: |
-        clang-format -i ${{github.workspace}}/src/*.cpp ${{github.workspace}}/include/**/*.hpp ${{github.workspace}}/tests/*.cpp
-        if ! git diff --quiet; then
-          echo "Code is not formatted. Please run clang-format before committing."
-          exit 1
-        fi
-
     - name: Configure CMake
-      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
@@ -45,3 +31,13 @@ jobs:
     - name: Test
       working-directory: ${{github.workspace}}/build
       run: ctest -C ${{env.BUILD_TYPE}}
+
+    - name: Check code formatting
+      run: |
+        clang-format -i $(find ${{github.workspace}}/src -name "*.cpp") \
+                        $(find ${{github.workspace}}/include -name "*.hpp") \
+                        $(find ${{github.workspace}}/tests -name "*.cpp")
+        if ! git diff --quiet; then
+          echo "Code is not formatted. Please run clang-format before committing."
+          exit 1
+        fi
