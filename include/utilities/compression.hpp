@@ -1,6 +1,9 @@
 #include "zlib.h"
+#include <string>
 
-namespace compress {
+namespace compression {
+
 std::string compress(const std::string& str, int compression_level = Z_BEST_COMPRESSION);
-void decompress(std::string& body);
-} // namespace compress
+std::string decompress(const std::string& body);
+
+} // namespace compression
