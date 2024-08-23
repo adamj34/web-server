@@ -6,7 +6,7 @@
 #include <sstream>
 #include <stdexcept>
 
-std::string FileHandler::send_file(std::string_view file_path, std::string base_path) {
+std::string fileHandler::send_file(std::string_view file_path, std::string base_path) {
     if (base_path.empty()) {
         base_path = std::filesystem::current_path();
     }
@@ -36,7 +36,7 @@ std::string FileHandler::send_file(std::string_view file_path, std::string base_
     }
 }
 
-void FileHandler::write_file(const std::string& file_path, std::string_view content) {
+void fileHandler::write_file(const std::string& file_path, std::string_view content) {
     auto base_path{ std::filesystem::current_path() };
     auto full_path = base_path / file_path;
     std::ofstream fout{ full_path };

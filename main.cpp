@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     // server.register_endpoint("GET", "/file", [](const http::Request& request) {
     //     http::Response response{ "HTTP/1.1", "200", "OK" };
     //     std::string s{ "test_file.txt" };
-    //     auto resource = FileHandler::send_file(s, "/home/addar/web-server");
+    //     auto resource = fileHandler::send_file(s, "/home/addar/web-server");
     //     response.set_body(resource);
     //     response.set_header("Content-Type", "text/plain");
 
@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
     // });
 
     // server.register_endpoint("POST", "/write_file", [](const http::Request& request) {
-    //     FileHandler::write_file("test_write.txt", request.get_body());
+    //     fileHandler::write_file("test_write.txt", request.get_body());
     //     http::Response response {};
     //     response.set_status_code("201");
     //     response.set_message("OK");

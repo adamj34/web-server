@@ -3,10 +3,9 @@
 
 #include <string>
 
-class FileHandler {
-    public:
-        static std::string send_file(std::string_view file_path, std::string base_path = "");
-        static void write_file(const std::string& file_path, std::string_view content);
-};
+namespace fileHandler {
+std::string send_file(std::string_view file_path, std::string base_path = "");
+void write_file(const std::string& file_path, std::string_view content);
+}; // namespace fileHandler
 
 #endif // FILE_HANDLER_HPP
