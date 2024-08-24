@@ -10,7 +10,8 @@
 
 class HeaderHandler {
     private:
-        std::unordered_map<std::string, std::unique_ptr<HeaderHandlerStrategy>> m_strategies;
+        std::unordered_map<std::string, std::unique_ptr<HeaderHandlerStrategy>> m_custom_strategies;
+        std::unordered_map<std::string, std::unique_ptr<HeaderHandlerStrategy>> m_default_strategies;
 
     public:
         HeaderHandler();

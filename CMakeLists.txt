@@ -16,7 +16,6 @@ target_sources(web-server PRIVATE
 	src/utilities/file_handler.cpp
 	src/utilities/compression.cpp
 	src/headers/header_handler.cpp
-	src/headers/header_handler_strategy.cpp
 )
 
 include(FetchContent)
@@ -48,13 +47,13 @@ add_executable(tests
 	src/utilities/file_handler.cpp
 	src/utilities/compression.cpp
 	src/headers/header_handler.cpp
-	src/headers/header_handler_strategy.cpp
 	tests/http_request_test.cpp 
 	tests/http_response_test.cpp
 	tests/http_server_test.cpp
 	tests/endpoint_manager_test.cpp
 	tests/file_handler_test.cpp
 	tests/compression_test.cpp
+	tests/header_handler_test.cpp 
 )
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain spdlog::spdlog zlib)
 target_link_libraries(web-server PRIVATE spdlog::spdlog zlib)
