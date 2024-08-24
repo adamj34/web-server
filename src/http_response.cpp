@@ -46,7 +46,7 @@ const void Response::set_body(std::string body) {
 
 const void Response::set_http_version(std::string http_version) { m_http_version = std::move(http_version); };
 
-Response& Response::set_header(std::string header_name, std::string header_value) {
+Response& Response::set_header(const std::string header_name, const std::string header_value) {
     m_headers[std::move(header_name)] = std::move(header_value);
     return *this;
 }

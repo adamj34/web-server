@@ -10,42 +10,37 @@
 #include <thread>
 
 int main(int argc, char* argv[]) {
-    std::string file_path = "test.txt";
-    auto out = compression::compress(file_path);
-    std::cout << out << std::endl;
-    std::string decompressed = compression::decompress(out);
-    std::cout << decompressed << std::endl;
 
-    // http::Server server{ "127.0.0.1", 4221, 15 };
-    // server.register_endpoint("GET", "/", [](const http::Request& request) {
-    //     http::Response response{"200"};
-    //     response.set_header("Content-Type", "text/html").set_header("Connection", "close");
+    http::Server server{ "127.0.0.1", 4221, 15 };
+    server.register_endpoint("GET", "/", [](const http::Request& request) {
+        http::Response response{ "200" };
+        response.set_header("Content-Type", "text/html").set_header("Connection", "close");
 
-    //     // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-    //     return response;
-    // });
+        // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        return response;
+    });
 
-    // server.register_endpoint("GET", "/file", [](const http::Request& request) {
-    //     http::Response response{ "HTTP/1.1", "200", "OK" };
-    //     std::string s{ "test_file.txt" };
-    //     auto resource = fileHandler::send_file(s, "/home/addar/web-server");
-    //     response.set_body(resource);
-    //     response.set_header("Content-Type", "text/plain");
+    server.register_endpoint("GET", "/file", [](const http::Request& request) {
+        http::Response response{ "HTTP/1.1", "200", "OK" };
+        std::string s{ "test_file.txt" };
+        auto resource = fileHandler::send_file(s, "./");
+        response.set_body(resource);
+        response.set_header("Content-Type", "text/plain");
 
-    //     return response;
-    // });
+        return response;
+    });
 
-    // server.register_endpoint("POST", "/write_file", [](const http::Request& request) {
-    //     fileHandler::write_file("test_write.txt", request.get_body());
-    //     http::Response response {};
-    //     response.set_status_code("201");
-    //     response.set_message("OK");
-    //     response.set_header("Content-Type", "text/plain");
+    server.register_endpoint("POST", "/write_file", [](const http::Request& request) {
+        fileHandler::write_file("test_write.txt", request.get_body());
+        http::Response response{};
+        response.set_status_code("201");
+        response.set_message("OK");
+        response.set_header("Content-Type", "text/plain");
 
-    //     return response;
-    // });
+        return response;
+    });
 
-    // server.start_listening();
+    server.start_listening();
 
-    // return 0;
+    return 0;
 }

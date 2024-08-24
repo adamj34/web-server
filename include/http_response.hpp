@@ -32,7 +32,7 @@ class Response {
         const void set_message(std::string message);
         const void set_body(std::string body);
 
-        Response& set_header(std::string header_name, std::string header_value);
+        Response& set_header(const std::string header_name, const std::string header_value);
         std::string to_string() const;
 };
 

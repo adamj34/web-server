@@ -1,6 +1,7 @@
 #include "http_server.hpp"
 #include "concurrency_model/thread_pool.hpp"
 #include "endpoint_manager.hpp"
+#include "headers/header_handler.hpp"
 #include "http_request.hpp"
 #include "http_response.hpp"
 #include "spdlog/spdlog.h"
@@ -23,10 +24,13 @@ Server::Server(const std::string ip_address, const int port, int connection_back
     : m_ip_address{ std::move(ip_address) }
     , m_port{ port }
     , m_connection_backlog{ connection_backlog } {
+
+    // check if the port number is valid
     if (m_port <= 0 || m_port > 65535) {
         spdlog::error("Port number: {} is out of valid range", m_port);
         throw std::invalid_argument("Port number is out of valid range");
     }
+
     if (m_connection_backlog <= 0) {
         spdlog::error("Connection backlog must be positive");
         throw std::invalid_argument("Connection backlog must be positive");
@@ -41,8 +45,9 @@ Server::Server(const std::string ip_address, const int port, int connection_back
     // Attempt to start the server
     try {
         start_server();
-    } catch (...) {
-        spdlog::error("Failed to start server");
+    } catch (const std::exception& e) {
+        spdlog::error("Server failed to start");
+        spdlog::error(e.what());
         close(m_server_socket_fd);
         throw;
     }
@@ -106,10 +111,14 @@ void Server::request_handler(const int client_socket_fd) const {
         throw std::runtime_error("Endpoint does not exist");
     }
     // Call the endpoint
-    http::Response res{ m_endpoint_manager.get_endpoint_func(method, path)(request) };
+    http::Response response{ m_endpoint_manager.get_endpoint_func(method, path)(request) };
+
+    // handle request headers
+    HeaderHandler header_handler{};
+    header_handler.handle_headers(request, response);
 
     // write the response
-    std::string str{ res.to_string() };
+    std::string str{ response.to_string() };
     write_response(client_socket_fd, str);
 
     close(client_socket_fd);

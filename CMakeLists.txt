@@ -13,8 +13,10 @@ target_sources(web-server PRIVATE
     src/http_request.cpp
     src/http_response.cpp
     src/endpoint_manager.cpp
-	src/file_handler.cpp
-	src/compression.cpp
+	src/utilities/file_handler.cpp
+	src/utilities/compression.cpp
+	src/headers/header_handler.cpp
+	src/headers/header_handler_strategy.cpp
 )
 
 include(FetchContent)
@@ -43,8 +45,10 @@ add_executable(tests
 	src/http_request.cpp
 	src/http_response.cpp
 	src/endpoint_manager.cpp
-	src/file_handler.cpp
-	src/compression.cpp
+	src/utilities/file_handler.cpp
+	src/utilities/compression.cpp
+	src/headers/header_handler.cpp
+	src/headers/header_handler_strategy.cpp
 	tests/http_request_test.cpp 
 	tests/http_response_test.cpp
 	tests/http_server_test.cpp
