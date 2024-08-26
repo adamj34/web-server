@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install clang-format
+    - name: Install dependencies
       run: sudo apt-get install -y clang-format
 
     - name: Configure CMake
@@ -41,3 +41,6 @@ jobs:
           echo "Code is not formatted. Please run clang-format before committing."
           exit 1
         fi
+
+    - name: Check code style with cppcheck static analysis
+      run: cppcheck --enable=all --inconclusive --std=c++20 --force ${{github.workspace}}/src ${{github.workspace}}/tests

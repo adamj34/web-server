@@ -21,6 +21,10 @@ Response::Response(std::string http_version, std::string status, std::string mes
     , m_status{ std::move(status) }
     , m_message{ std::move(message) } {}
 
+Response::Response(std::string status, std::string message)
+    : m_status{ std::move(status) }
+    , m_message{ std::move(message) } {}
+
 Response::Response(std::string status)
     : m_status{ std::move(status) } {}
 

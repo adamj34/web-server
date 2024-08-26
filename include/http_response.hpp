@@ -19,6 +19,7 @@ class Response {
         Response(std::string http_version, std::string status, std::string message,
                  std::unordered_map<std::string, std::string> headers, std::string body);
         Response(std::string http_version, std::string status, std::string message);
+        Response(std::string status, std::string message);
         Response(std::string status);
 
         const std::string& get_http_version() const noexcept;

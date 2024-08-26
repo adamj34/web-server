@@ -27,8 +27,8 @@ std::string fileHandler::send_file(std::string_view file_path, std::string base_
         std::ostringstream oss{};
         oss << fin.rdbuf();
         std::string file_content = oss.str();
-        auto file_size = std::filesystem::file_size(full_path);
         fin.close();
+
         return file_content;
     } else {
         spdlog::error("File does not exist: {}", file_path);

@@ -1,14 +1,14 @@
-#include "include/http_request.hpp"
-#include "include/http_response.hpp"
-#include "include/http_server.hpp"
-#include "include/utilities/file_handler.hpp"
-#include <iostream>
+# HTTP server written in plain C++
 
-#include "include/utilities/compression.hpp"
-#include "spdlog/spdlog.h"
-#include <chrono>
-#include <thread>
+## Features:
+* basic handling of requests and responses according to the RFC HTTP standard
+* saving and retrieving text files
+* automatic headers handling
+* support for file compression and decompression
+* support for concurrency
 
+## Example:
+```C++
 int main(int argc, char* argv[]) {
 
     // configure server's address and port
@@ -17,7 +17,9 @@ int main(int argc, char* argv[]) {
     // register endpoints
     server.register_endpoint("GET", "/", [](const http::Request& request) {
         http::Response response{ "200", "OK" };
-        response.set_header("Content-Type", "text/html").set_header("Connection", "close");
+        response
+            .set_header("Content-Type", "text/html")
+            .set_header("Connection", "close");
 
         return response;
     });
@@ -54,3 +56,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+```

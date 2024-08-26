@@ -98,7 +98,7 @@ void Server::request_handler(const int client_socket_fd) const {
         spdlog::error("Failed to read from client");
         throw std::runtime_error("Failed to read from client");
     }
-    spdlog::info("Request from client:\n {}", buffer);
+    spdlog::info("Request from client:\n{}", buffer);
 
     // parse the request
     http::Request request{ buffer };
