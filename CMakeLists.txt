@@ -19,6 +19,7 @@ target_sources(web-server PRIVATE
 )
 
 include(FetchContent)
+set(FETCHCONTENT_QUIET FALSE)
 
 FetchContent_Declare(
   Catch2
